@@ -14,6 +14,10 @@
 		8507ED031D8B2631003A7DEA /* SwinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED021D8B2631003A7DEA /* SwinterTests.swift */; };
 		8507ED0E1D8B2695003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 		8507ED101D8B26B5003A7DEA /* SpacerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */; };
+		8507ED191D8B274C003A7DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8507ED181D8B274C003A7DEA /* Cocoa.framework */; };
+		8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */; };
+		8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */; };
+		8507ED241D8B274C003A7DEA /* SwiftyLinter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +28,28 @@
 			remoteGlobalIDString = 8507ECEC1D8B2631003A7DEA;
 			remoteInfo = Swinter;
 		};
+		8507ED221D8B274C003A7DEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8507ECE51D8B2631003A7DEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8507ED151D8B274C003A7DEA;
+			remoteInfo = SwiftyLinter;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8507ED281D8B274C003A7DEA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8507ED241D8B274C003A7DEA /* SwiftyLinter.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8507ECED1D8B2631003A7DEA /* Swinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +63,12 @@
 		8507ED041D8B2631003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8507ED0D1D8B2695003A7DEA /* LintSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintSpace.swift; sourceTree = "<group>"; };
 		8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerTests.swift; sourceTree = "<group>"; };
+		8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftyLinter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8507ED181D8B274C003A7DEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		8507ED1C1D8B274C003A7DEA /* SwiftyLinter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyLinter.entitlements; sourceTree = "<group>"; };
+		8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		8507ED211D8B274C003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +86,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8507ED131D8B274C003A7DEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8507ED191D8B274C003A7DEA /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +102,8 @@
 			children = (
 				8507ECEF1D8B2631003A7DEA /* Swinter */,
 				8507ED011D8B2631003A7DEA /* SwinterTests */,
+				8507ED1A1D8B274C003A7DEA /* SwiftyLinter */,
+				8507ED171D8B274C003A7DEA /* Frameworks */,
 				8507ECEE1D8B2631003A7DEA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +113,7 @@
 			children = (
 				8507ECED1D8B2631003A7DEA /* Swinter.app */,
 				8507ECFE1D8B2631003A7DEA /* SwinterTests.xctest */,
+				8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +149,33 @@
 			name = Linters;
 			sourceTree = "<group>";
 		};
+		8507ED171D8B274C003A7DEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8507ED181D8B274C003A7DEA /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8507ED1A1D8B274C003A7DEA /* SwiftyLinter */ = {
+			isa = PBXGroup;
+			children = (
+				8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */,
+				8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */,
+				8507ED211D8B274C003A7DEA /* Info.plist */,
+				8507ED1B1D8B274C003A7DEA /* Supporting Files */,
+			);
+			path = SwiftyLinter;
+			sourceTree = "<group>";
+		};
+		8507ED1B1D8B274C003A7DEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8507ED1C1D8B274C003A7DEA /* SwiftyLinter.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,10 +186,12 @@
 				8507ECE91D8B2631003A7DEA /* Sources */,
 				8507ECEA1D8B2631003A7DEA /* Frameworks */,
 				8507ECEB1D8B2631003A7DEA /* Resources */,
+				8507ED281D8B274C003A7DEA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8507ED231D8B274C003A7DEA /* PBXTargetDependency */,
 			);
 			name = Swinter;
 			productName = Swinter;
@@ -145,6 +216,23 @@
 			productReference = 8507ECFE1D8B2631003A7DEA /* SwinterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8507ED151D8B274C003A7DEA /* SwiftyLinter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8507ED251D8B274C003A7DEA /* Build configuration list for PBXNativeTarget "SwiftyLinter" */;
+			buildPhases = (
+				8507ED121D8B274C003A7DEA /* Sources */,
+				8507ED131D8B274C003A7DEA /* Frameworks */,
+				8507ED141D8B274C003A7DEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyLinter;
+			productName = SwiftyLinter;
+			productReference = 8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -166,6 +254,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8507ECEC1D8B2631003A7DEA;
 					};
+					8507ED151D8B274C003A7DEA = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 46ETJSLJJM;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 8507ECE81D8B2631003A7DEA /* Build configuration list for PBXProject "Swinter" */;
@@ -183,6 +276,7 @@
 			targets = (
 				8507ECEC1D8B2631003A7DEA /* Swinter */,
 				8507ECFD1D8B2631003A7DEA /* SwinterTests */,
+				8507ED151D8B274C003A7DEA /* SwiftyLinter */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +292,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8507ECFC1D8B2631003A7DEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8507ED141D8B274C003A7DEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,6 +327,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8507ED121D8B274C003A7DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */,
+				8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -233,6 +343,11 @@
 			isa = PBXTargetDependency;
 			target = 8507ECEC1D8B2631003A7DEA /* Swinter */;
 			targetProxy = 8507ECFF1D8B2631003A7DEA /* PBXContainerItemProxy */;
+		};
+		8507ED231D8B274C003A7DEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8507ED151D8B274C003A7DEA /* SwiftyLinter */;
+			targetProxy = 8507ED221D8B274C003A7DEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -341,6 +456,7 @@
 		8507ED081D8B2631003A7DEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -356,6 +472,7 @@
 		8507ED091D8B2631003A7DEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -400,6 +517,40 @@
 			};
 			name = Release;
 		};
+		8507ED261D8B274C003A7DEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 46ETJSLJJM;
+				INFOPLIST_FILE = SwiftyLinter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter.SwiftyLinter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8507ED271D8B274C003A7DEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 46ETJSLJJM;
+				INFOPLIST_FILE = SwiftyLinter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter.SwiftyLinter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -425,6 +576,14 @@
 			buildConfigurations = (
 				8507ED0B1D8B2631003A7DEA /* Debug */,
 				8507ED0C1D8B2631003A7DEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8507ED251D8B274C003A7DEA /* Build configuration list for PBXNativeTarget "SwiftyLinter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8507ED261D8B274C003A7DEA /* Debug */,
+				8507ED271D8B274C003A7DEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

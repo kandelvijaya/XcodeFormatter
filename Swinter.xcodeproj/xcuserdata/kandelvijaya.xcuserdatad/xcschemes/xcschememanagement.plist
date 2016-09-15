@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>SwiftyLinter.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Swinter.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>8507ECFD1D8B2631003A7DEA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8507ED151D8B274C003A7DEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
