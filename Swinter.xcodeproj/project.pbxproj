@@ -12,6 +12,8 @@
 		8507ECF51D8B2631003A7DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8507ECF41D8B2631003A7DEA /* Assets.xcassets */; };
 		8507ECF81D8B2631003A7DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8507ECF61D8B2631003A7DEA /* Main.storyboard */; };
 		8507ED031D8B2631003A7DEA /* SwinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED021D8B2631003A7DEA /* SwinterTests.swift */; };
+		8507ED0E1D8B2695003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
+		8507ED101D8B26B5003A7DEA /* SpacerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		8507ECFE1D8B2631003A7DEA /* SwinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwinterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8507ED021D8B2631003A7DEA /* SwinterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinterTests.swift; sourceTree = "<group>"; };
 		8507ED041D8B2631003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8507ED0D1D8B2695003A7DEA /* LintSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintSpace.swift; sourceTree = "<group>"; };
+		8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		8507ECEF1D8B2631003A7DEA /* Swinter */ = {
 			isa = PBXGroup;
 			children = (
+				8507ED111D8B26EB003A7DEA /* Linters */,
 				8507ECF01D8B2631003A7DEA /* AppDelegate.swift */,
 				8507ECF21D8B2631003A7DEA /* ViewController.swift */,
 				8507ECF41D8B2631003A7DEA /* Assets.xcassets */,
@@ -87,10 +92,19 @@
 		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */,
 				8507ED021D8B2631003A7DEA /* SwinterTests.swift */,
 				8507ED041D8B2631003A7DEA /* Info.plist */,
 			);
 			path = SwinterTests;
+			sourceTree = "<group>";
+		};
+		8507ED111D8B26EB003A7DEA /* Linters */ = {
+			isa = PBXGroup;
+			children = (
+				8507ED0D1D8B2695003A7DEA /* LintSpace.swift */,
+			);
+			name = Linters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8507ECF31D8B2631003A7DEA /* ViewController.swift in Sources */,
+				8507ED0E1D8B2695003A7DEA /* LintSpace.swift in Sources */,
 				8507ECF11D8B2631003A7DEA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8507ED031D8B2631003A7DEA /* SwinterTests.swift in Sources */,
+				8507ED101D8B26B5003A7DEA /* SpacerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

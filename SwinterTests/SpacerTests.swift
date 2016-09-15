@@ -1,13 +1,12 @@
 //
-//  Tests.swift
-//  Tests
+//  SpacerTests.swift
 //
 //  Created by Vijaya Prakash Kandel on 9/15/16.
 //  Copyright © 2016 Vijaya Prakash Kandel. All rights reserved.
 //
 
 import XCTest
-@testable import LinterExt
+@testable import Swinter
 
 class SpacerTests: XCTestCase {
     
