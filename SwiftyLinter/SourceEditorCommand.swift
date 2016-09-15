@@ -72,7 +72,7 @@ extension SourceEditorCommand {
             //TODO: 1 USE REGEX
             
             //2.
-            
+            let mutatedString = LintSpace().ensureOneSpaceAfterColon(line: lineString)
             
             return nil
         }

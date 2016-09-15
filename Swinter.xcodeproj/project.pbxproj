@@ -18,6 +18,8 @@
 		8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */; };
 		8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */; };
 		8507ED241D8B274C003A7DEA /* SwiftyLinter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
+		8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8507ED031D8B2631003A7DEA /* SwinterTests.swift in Sources */,
+				8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */,
 				8507ED101D8B26B5003A7DEA /* SpacerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */,
+				8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */,
 				8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
