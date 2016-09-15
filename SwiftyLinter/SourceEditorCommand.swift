@@ -67,14 +67,12 @@ extension SourceEditorCommand {
     /// - parameter invocation: Text Buffer
     func ensureProperSpacing(invocation: XCSourceEditorCommandInvocation) {
         forEachLine(invocation: invocation) { string in
-            var lineString = string
-            
             //TODO: 1 USE REGEX
-            
+        
             //2.
-            let mutatedString = LintSpace().ensureOneSpaceAfterColon(line: lineString)
+            let mutatedString = LintSpace().ensureOneSpaceAfterColon(line: string)
             
-            return nil
+            return mutatedString
         }
     }
     
@@ -89,10 +87,8 @@ extension SourceEditorCommand {
             }
         }
         
-        //mdofiy the array
-        changed.forEach{
-            invocation.buffer.lines[$0] = $1
-        }
+        //mdofiy the lines array
+        changed.forEach{ invocation.buffer.lines[$0] = $1 }
     }
     
 }

@@ -124,11 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				8507ED111D8B26EB003A7DEA /* Linters */,
-				8507ECF01D8B2631003A7DEA /* AppDelegate.swift */,
-				8507ECF21D8B2631003A7DEA /* ViewController.swift */,
-				8507ECF41D8B2631003A7DEA /* Assets.xcassets */,
-				8507ECF61D8B2631003A7DEA /* Main.storyboard */,
-				8507ECF91D8B2631003A7DEA /* Info.plist */,
+				8507ED2B1D8B3C2D003A7DEA /* Supporting files */,
 			);
 			path = Swinter;
 			sourceTree = "<group>";
@@ -176,6 +172,18 @@
 				8507ED1C1D8B274C003A7DEA /* SwiftyLinter.entitlements */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8507ED2B1D8B3C2D003A7DEA /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				8507ECF01D8B2631003A7DEA /* AppDelegate.swift */,
+				8507ECF21D8B2631003A7DEA /* ViewController.swift */,
+				8507ECF41D8B2631003A7DEA /* Assets.xcassets */,
+				8507ECF61D8B2631003A7DEA /* Main.storyboard */,
+				8507ECF91D8B2631003A7DEA /* Info.plist */,
+			);
+			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
