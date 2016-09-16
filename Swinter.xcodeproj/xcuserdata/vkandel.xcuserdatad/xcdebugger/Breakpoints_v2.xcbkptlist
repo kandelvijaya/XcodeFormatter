@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swinter/LintSpace.swift"
+            timestampString = "495711289.450689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "correctFunctionReturnArrow(line:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swinter.LintSpace.correctFunctionReturnArrow (line : Swift.String) -&gt; Swift.String"
+                  moduleName = "Swinter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vkandel/Projects/Swinter/Swinter/LintSpace.swift"
+                  timestampString = "495711313.192496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwinterTests.LintSpace.correctFunctionReturnArrow (line : Swift.String) -&gt; Swift.String"
+                  moduleName = "SwinterTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vkandel/Projects/Swinter/Swinter/LintSpace.swift"
+                  timestampString = "495711313.263953"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2857BC161D8BF1B800E22971 /* ReturnArrowSpacerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */; };
 		8507ECF11D8B2631003A7DEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ECF01D8B2631003A7DEA /* AppDelegate.swift */; };
 		8507ECF31D8B2631003A7DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ECF21D8B2631003A7DEA /* ViewController.swift */; };
 		8507ECF51D8B2631003A7DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8507ECF41D8B2631003A7DEA /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnArrowSpacerTests.swift; sourceTree = "<group>"; };
 		8507ECED1D8B2631003A7DEA /* Swinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8507ECF01D8B2631003A7DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8507ECF21D8B2631003A7DEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */,
 				8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */,
 				8507ED0F1D8B26B5003A7DEA /* ColonSpacerTests.swift */,
 				8507ED041D8B2631003A7DEA /* Info.plist */,
@@ -255,7 +258,7 @@
 				TargetAttributes = {
 					8507ECEC1D8B2631003A7DEA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 46ETJSLJJM;
+						DevelopmentTeam = U2F9EXLY9X;
 						ProvisioningStyle = Automatic;
 					};
 					8507ECFD1D8B2631003A7DEA = {
@@ -266,7 +269,7 @@
 					};
 					8507ED151D8B274C003A7DEA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 46ETJSLJJM;
+						DevelopmentTeam = U2F9EXLY9X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -335,6 +338,7 @@
 				8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */,
 				8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */,
 				8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */,
+				2857BC161D8BF1B800E22971 /* ReturnArrowSpacerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,9 +476,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 46ETJSLJJM;
+				DEVELOPMENT_TEAM = U2F9EXLY9X;
 				INFOPLIST_FILE = Swinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -488,9 +493,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 46ETJSLJJM;
+				DEVELOPMENT_TEAM = U2F9EXLY9X;
 				INFOPLIST_FILE = Swinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -535,7 +541,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 46ETJSLJJM;
+				DEVELOPMENT_TEAM = U2F9EXLY9X;
 				INFOPLIST_FILE = SwiftyLinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -552,7 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 46ETJSLJJM;
+				DEVELOPMENT_TEAM = U2F9EXLY9X;
 				INFOPLIST_FILE = SwiftyLinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;

@@ -14,6 +14,7 @@ final class LintSpace {
     fileprivate enum RegexPattern: String {
         case Colon = ".(:)([^ ]|[ ]{2,})."
         case Comma = ".(,)([^ ]|[ ]{2,})."
+        case FunctionReturnArrow = ".(->)([^ ]|[ ]{2,})"
     }
     
     fileprivate enum SpaceMatchType {
@@ -32,6 +33,10 @@ final class LintSpace {
     
     func correctCommaSeparation(line: String) -> String {
         return corrected(line: line, forInconsistent: .Comma)
+    }
+
+    func correctFunctionReturnArrow(line: String) -> String {
+        return corrected(line: line, forInconsistent: .FunctionReturnArrow)
     }
     
 }
