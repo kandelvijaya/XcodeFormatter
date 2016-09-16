@@ -17,9 +17,10 @@ final class LintSpace {
     // In case when there is no space it should match X only
     //NOTE:- Try it on www.regex101.com
     fileprivate enum RegexPattern: String {
-        case Colon = ".(:)([\\S]|[ ]{2,}[\\S])"
-        case Comma = ".(,)([\\S]|[ ]{2,}[\\S])"
-        case FunctionReturnArrow = ".(->)([\\S]|[ ]{2,}[\\S])"
+        case colon = ".([:])([\\S]|[ ]{2,}[\\S])"
+        case comma = ".(,)([\\S]|[ ]{2,}[\\S])"
+        case functionReturnArrow = ".(->)([\\S]|[ ]{2,}[\\S])"
+        case trailingCurlyBracket = "([^\\(\\.\\[\\s])([\\{]|[ ]{2,}\\{)"
     }
     
     fileprivate struct SpaceMatchedRange {
@@ -28,15 +29,19 @@ final class LintSpace {
     }
     
     func correctColonSpace(line: String) -> String {
-        return corrected(line: line, forInconsistent: .Colon)
+        return corrected(line: line, forInconsistent: .colon)
     }
     
     func correctCommaSeparation(line: String) -> String {
-        return corrected(line: line, forInconsistent: .Comma)
+        return corrected(line: line, forInconsistent: .comma)
     }
 
     func correctFunctionReturnArrow(line: String) -> String {
-        return corrected(line: line, forInconsistent: .FunctionReturnArrow)
+        return corrected(line: line, forInconsistent: .functionReturnArrow)
+    }
+    
+    func correctTrailingCurlyBracket(line: String) -> String {
+        return corrected(line: line, forInconsistent: .trailingCurlyBracket)
     }
     
 }

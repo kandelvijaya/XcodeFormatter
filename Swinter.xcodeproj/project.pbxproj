@@ -21,6 +21,7 @@
 		8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 		8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 		8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */; };
+		8507ED311D8C8198003A7DEA /* TrailingCurlyBracketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		8507ED211D8B274C003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommaSpaceTests.swift; sourceTree = "<group>"; };
+		8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailingCurlyBracketTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */,
 				2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */,
 				8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */,
 				8507ED0F1D8B26B5003A7DEA /* ColonSpacerTests.swift */,
@@ -337,6 +340,7 @@
 			files = (
 				8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */,
 				8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */,
+				8507ED311D8C8198003A7DEA /* TrailingCurlyBracketTests.swift in Sources */,
 				8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */,
 				2857BC161D8BF1B800E22971 /* ReturnArrowSpacerTests.swift in Sources */,
 			);

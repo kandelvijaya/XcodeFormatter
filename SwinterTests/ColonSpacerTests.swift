@@ -64,4 +64,12 @@ class ColonSpacerTests: XCTestCase {
         XCTAssertEqual(expected, output)
     }
     
+    func testThat_ColonInMiddle_IsCorrected() {
+        let input = "[String : Int]"
+        let expected = "[String: Int]"
+        
+        let output = LintSpace().correctColonSpace(line: input)
+        
+        XCTAssertEqual(expected, output)
+    }
 }
