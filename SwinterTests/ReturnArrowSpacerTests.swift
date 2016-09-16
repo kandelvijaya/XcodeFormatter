@@ -38,7 +38,7 @@ class ReturnArrowSpacerTests: XCTestCase {
         XCTAssertEqual(expected, output)
     }
 
-    func testThat_MultipleArrows_AreFormattedProperly() {
+    func testThat_MultipleArrows_areFormattedProperly() {
         let input = "func madmap(closure: (Element ->U?), anotherClosure: A->Bool) ->    E"
         let expected = "func madmap(closure: (Element -> U?), anotherClosure: A-> Bool) -> E"
 

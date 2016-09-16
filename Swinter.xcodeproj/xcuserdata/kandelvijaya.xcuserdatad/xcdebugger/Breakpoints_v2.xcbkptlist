@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swinter/LintSpace.swift"
+            timestampString = "495745807.398904"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "correctColonSpace(for:at:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swinter.LintSpace.(correctColonSpace in _D7FA462B5E19B07D318EAA9ED51CD84D) (for : Swift.String, at : Swift.Array&lt;Swinter.LintSpace.(SpaceMatchedRange in _D7FA462B5E19B07D318EAA9ED51CD84D)&gt;) -&gt; Swift.String"
+                  moduleName = "Swinter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/LintSpace.swift"
+                  timestampString = "495745415.372155"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwinterTests.LintSpace.(correctColonSpace in _12324658CCBBD7709A17C0147EFF2B5E) (for : Swift.String, at : Swift.Array&lt;SwinterTests.LintSpace.(SpaceMatchedRange in _12324658CCBBD7709A17C0147EFF2B5E)&gt;) -&gt; Swift.String"
+                  moduleName = "SwinterTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/LintSpace.swift"
+                  timestampString = "495745415.830404"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "368">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

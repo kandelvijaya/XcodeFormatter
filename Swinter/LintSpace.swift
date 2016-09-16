@@ -10,20 +10,20 @@ import Foundation
 
 final class LintSpace {
     
+    // These regular expression should have 2nd capture group
+    // which does only include ___X where X
+    // is the first character after space
+    // and _ represents a single space
+    // In case when there is no space it should match X only
     //NOTE:- Try it on www.regex101.com
     fileprivate enum RegexPattern: String {
-        case Colon = ".(:)([^ ]|[ ]{2,})."
-        case Comma = ".(,)([^ ]|[ ]{2,})."
-        case FunctionReturnArrow = ".(->)([^ ]|[ ]{2,})"
-    }
-    
-    fileprivate enum SpaceMatchType {
-        case NoSpace
-        case MultipleSpace(spaceCount: Int)
+        case Colon = ".(:)([\\S]|[ ]{2,}[\\S])"
+        case Comma = ".(,)([\\S]|[ ]{2,}[\\S])"
+        case FunctionReturnArrow = ".(->)([\\S]|[ ]{2,}[\\S])"
     }
     
     fileprivate struct SpaceMatchedRange {
-        let matchType: SpaceMatchType
+        let spaceCount: Int
         let matchRange: Range<String.Index>
     }
     
@@ -56,21 +56,13 @@ extension LintSpace {
         var rangePositonOffset = 0
         var correctedLine = lineString
         
-        for range in matchedRanges {
-            
-            let newLowerIndex = correctedLine.index(range.matchRange.lowerBound, offsetBy: rangePositonOffset)
-            let newUpperIndex = correctedLine.index(range.matchRange.upperBound, offsetBy: rangePositonOffset)
+        for currentMatchedRange in matchedRanges {
+            let newLowerIndex = correctedLine.index(currentMatchedRange.matchRange.lowerBound, offsetBy: rangePositonOffset)
+            let newUpperIndex = correctedLine.index(currentMatchedRange.matchRange.upperBound, offsetBy: rangePositonOffset)
             let correctedRange = Range(uncheckedBounds: (newLowerIndex, newUpperIndex))
             
-            switch range.matchType {
-            case .NoSpace:
-                rangePositonOffset += 1
-                correctedLine.insert(Character(" "), at: correctedRange.lowerBound)
-                
-            case .MultipleSpace( let spaceCount):
-                rangePositonOffset -= (spaceCount - 1) //1 for " "
-                correctedLine.replaceSubrange(correctedRange, with: " ")
-            }
+            rangePositonOffset += 1 - currentMatchedRange.spaceCount //1 for new " "
+            correctedLine.replaceSubrange(correctedRange, with: " ")
         }
         
         return correctedLine
@@ -93,27 +85,19 @@ extension LintSpace {
             
             if let textChecking = textCheckingResult {
                 let secondCaptureGroupRange = textChecking.rangeAt(2)
-                let matchedRange = rangeFrom(nsrange: secondCaptureGroupRange, forString: lineString)
+                //Offset because Last char in the range is for X
+                let matchedRange = rangeFrom(nsrange: secondCaptureGroupRange, forString: lineString, offset: -1)
                 let matchedString = lineString.substring(with: matchedRange)
-                
-                if matchedString.contains(" ") {
-                    //matched more than 1 spaces
-                    let spaceRange = SpaceMatchedRange(matchType: .MultipleSpace(spaceCount: matchedString.characters.count), matchRange: matchedRange)
-                    matchedRanges.append(spaceRange)
-                } else {
-                    //There were no spaces in between
-                    let spaceRange = SpaceMatchedRange(matchType: .NoSpace, matchRange: matchedRange)
-                    matchedRanges.append(spaceRange)
-                }
+                let spaceRange = SpaceMatchedRange(spaceCount: matchedString.characters.count, matchRange: matchedRange)
+                matchedRanges.append(spaceRange)
             }
-            
         })
         return matchedRanges
     }
     
-    private func rangeFrom(nsrange: NSRange, forString: String) -> Range<String.Index> {
+    private func rangeFrom(nsrange: NSRange, forString: String, offset: Int) -> Range<String.Index> {
         let lowerIndex = forString.index(forString.startIndex, offsetBy: nsrange.location)
-        let upperIndex = forString.index(forString.startIndex, offsetBy: nsrange.location + nsrange.length)
+        let upperIndex = forString.index(forString.startIndex, offsetBy: nsrange.location + nsrange.length + offset)
         return Range(uncheckedBounds: (lowerIndex, upperIndex))
     }
 

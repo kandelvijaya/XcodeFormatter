@@ -11,7 +11,7 @@ import XCTest
 
 final class CommaSpaceTests: XCTestCase {
  
-    func testThat_CommaAndNoSpace_IsCorrected() {
+    func testThat_CommaAndNoSpace_isSpaceSeparated() {
         let input = "func sum(a: Int,b: Int)"
         let expected = "func sum(a: Int, b: Int)"
         
@@ -20,7 +20,7 @@ final class CommaSpaceTests: XCTestCase {
         XCTAssertEqual(expected, output)
     }
     
-    func testThat_ProperSpacedComma_IsUntouched() {
+    func testThat_ProperSpacedComma_remainsSame() {
         let input = "(a: Int, b: Int, c: Int)"
         let expected = input
         
@@ -29,7 +29,7 @@ final class CommaSpaceTests: XCTestCase {
         XCTAssertEqual(expected, output)
     }
     
-    func testThat_OnlyCommasAreCorrected() {
+    func testThat_OnlyMisspacedCommas_areCorrected() {
         let input = "func sum(a:Int,b: Int, c:Int,d: Int)"
         let expected = "func sum(a:Int, b: Int, c:Int, d: Int)"
         
@@ -38,7 +38,7 @@ final class CommaSpaceTests: XCTestCase {
         XCTAssertEqual(expected, output)
     }
     
-    func testThat_SingleLineMultipleImproperCommas_AreCorrected() {
+    func testThat_SingleLineWithMultipleImproperCommas_areCorrected() {
         let input = "func sum(a:Int,b:Int,c:Int,d:String, e:Int,          f:   String,     f:Int,g:Int, h:    Int)"
         let expected = "func sum(a:Int, b:Int, c:Int, d:String, e:Int, f:   String, f:Int, g:Int, h:    Int)"
         

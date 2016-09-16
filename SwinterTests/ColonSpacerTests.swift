@@ -10,42 +10,43 @@ import XCTest
 
 class ColonSpacerTests: XCTestCase {
     
-    func testThat_ColonFollowedByNoSpace_IsReplaced() {
-        let testInputLine = "let a:String?"
-        let expectedOutput = "let a: String?"
+    func testThat_ColonFollowedByNoSpace_isSpaceSeparated() {
+        let input = "let a:String?"
+        let expected = "let a: String?"
         
-        let output = LintSpace().correctColonSpace(line: testInputLine)
+        let output = LintSpace().correctColonSpace(line: input)
         
-        XCTAssertEqual(expectedOutput, output)
+        XCTAssertEqual(expected, output)
     }
     
-    func testThat_ColonFollowedByMultipleSpace_IsTrimmed() {
-        let testInputLine = "let a:        String?"
-        let expectedOutput = "let a: String?"
+    func testThat_ColonFollowedByMultipleSpace_isTrimmedToOneSpace() {
+        let input = "let a:        String?"
+        let expected = "let a: String?"
         
-        let output = LintSpace().correctColonSpace(line: testInputLine)
+        let output = LintSpace().correctColonSpace(line: input)
         
-        XCTAssertEqual(expectedOutput, output)
+        XCTAssertEqual(expected, output)
     }
     
-    func testThat_ColonFollowedByMoreSpace_IsReplaced() {
-        let testInputLines = ["let a:   Int", "let b:              String?", "[String:  AnyObject]"]
+    func testThat_ColonFollowedByMultipleSpace_isTrimmed() {
+        let inputs = ["let a:   Int", "let b:              String?", "[String:  AnyObject]"]
         let expectedOutputs = ["let a: Int", "let b: String?", "[String: AnyObject]"]
         
-        let outputs = testInputLines.map({ LintSpace().correctColonSpace(line: $0) })
+        let outputs = inputs.map({ LintSpace().correctColonSpace(line: $0) })
         
         XCTAssertEqual(expectedOutputs, outputs)
     }
     
-    func testThat_ColonFollowedByOneSpace_IsReturnedSame() {
+    func testThat_ColonFollowedByOneSpace_isReturnedSame() {
         let inputs = ["let a: Int", "func do(a: Int, b: [String: AnyObject]) {"]
+        let expectedOutputs = inputs
         
         let outputs = inputs.map{ LintSpace().correctColonSpace(line: $0) }
         
-        XCTAssertEqual(inputs, outputs)
+        XCTAssertEqual(expectedOutputs, outputs)
     }
     
-    func testhThat_MultipleVoilationInSingleLine_AreCorrected() {
+    func testThat_MultipleVoilationInSingleLine_areCorrected() {
         let input = "func do(a:Int, b:     Int) -> Int {"
         let expected = "func do(a: Int, b: Int) -> Int {"
         
@@ -54,7 +55,7 @@ class ColonSpacerTests: XCTestCase {
         XCTAssertEqual(expected, output, "the output is \(output)")
     }
     
-    func testThat_MultipleComplexVoilationInSinleLine_AreCorrected() {
+    func testThat_MultipleComplexVoilationInSinleLine_areCorrected() {
         let input = "func structFromJSON(json:   [String:AnyObject], struct:SomeStruct, completion:(Bool->Void)) {"
         let expected = "func structFromJSON(json: [String: AnyObject], struct: SomeStruct, completion: (Bool->Void)) {"
         
