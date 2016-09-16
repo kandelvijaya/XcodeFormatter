@@ -70,9 +70,12 @@ extension SourceEditorCommand {
             //TODO: 1 USE REGEX
         
             //2.
-            let mutatedString = LintSpace().ensureOneSpaceAfterColon(line: string)
+            let colonCorrected = LintSpace().correctColonSpace(line: string)
             
-            return mutatedString
+            //3. Comma
+            let allCorrected = LintSpace().correctCommaSeparation(line: colonCorrected)
+            
+            return allCorrected
         }
     }
     

@@ -8,13 +8,13 @@
 import XCTest
 @testable import Swinter
 
-class SpacerTests: XCTestCase {
+class ColonSpacerTests: XCTestCase {
     
     func testThat_ColonFollowedByNoSpace_IsReplaced() {
         let testInputLine = "let a:String?"
         let expectedOutput = "let a: String?"
         
-        let output = LintSpace().ensureOneSpaceAfterColon(line: testInputLine)
+        let output = LintSpace().correctColonSpace(line: testInputLine)
         
         XCTAssertEqual(expectedOutput, output)
     }
@@ -23,7 +23,7 @@ class SpacerTests: XCTestCase {
         let testInputLine = "let a:        String?"
         let expectedOutput = "let a: String?"
         
-        let output = LintSpace().ensureOneSpaceAfterColon(line: testInputLine)
+        let output = LintSpace().correctColonSpace(line: testInputLine)
         
         XCTAssertEqual(expectedOutput, output)
     }
@@ -32,7 +32,7 @@ class SpacerTests: XCTestCase {
         let testInputLines = ["let a:   Int", "let b:              String?", "[String:  AnyObject]"]
         let expectedOutputs = ["let a: Int", "let b: String?", "[String: AnyObject]"]
         
-        let outputs = testInputLines.map({ LintSpace().ensureOneSpaceAfterColon(line: $0) })
+        let outputs = testInputLines.map({ LintSpace().correctColonSpace(line: $0) })
         
         XCTAssertEqual(expectedOutputs, outputs)
     }
@@ -40,7 +40,7 @@ class SpacerTests: XCTestCase {
     func testThat_ColonFollowedByOneSpace_IsReturnedSame() {
         let inputs = ["let a: Int", "func do(a: Int, b: [String: AnyObject]) {"]
         
-        let outputs = inputs.map{ LintSpace().ensureOneSpaceAfterColon(line: $0) }
+        let outputs = inputs.map{ LintSpace().correctColonSpace(line: $0) }
         
         XCTAssertEqual(inputs, outputs)
     }
@@ -49,7 +49,7 @@ class SpacerTests: XCTestCase {
         let input = "func do(a:Int, b:     Int) -> Int {"
         let expected = "func do(a: Int, b: Int) -> Int {"
         
-        let output = LintSpace().ensureOneSpaceAfterColon(line: input)
+        let output = LintSpace().correctColonSpace(line: input)
         
         XCTAssertEqual(expected, output, "the output is \(output)")
     }
@@ -58,8 +58,9 @@ class SpacerTests: XCTestCase {
         let input = "func structFromJSON(json:   [String:AnyObject], struct:SomeStruct, completion:(Bool->Void)) {"
         let expected = "func structFromJSON(json: [String: AnyObject], struct: SomeStruct, completion: (Bool->Void)) {"
         
-        let output = LintSpace().ensureOneSpaceAfterColon(line: input)
+        let output = LintSpace().correctColonSpace(line: input)
         
         XCTAssertEqual(expected, output)
     }
+    
 }

@@ -11,15 +11,15 @@
 		8507ECF31D8B2631003A7DEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ECF21D8B2631003A7DEA /* ViewController.swift */; };
 		8507ECF51D8B2631003A7DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8507ECF41D8B2631003A7DEA /* Assets.xcassets */; };
 		8507ECF81D8B2631003A7DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8507ECF61D8B2631003A7DEA /* Main.storyboard */; };
-		8507ED031D8B2631003A7DEA /* SwinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED021D8B2631003A7DEA /* SwinterTests.swift */; };
 		8507ED0E1D8B2695003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
-		8507ED101D8B26B5003A7DEA /* SpacerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */; };
+		8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0F1D8B26B5003A7DEA /* ColonSpacerTests.swift */; };
 		8507ED191D8B274C003A7DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8507ED181D8B274C003A7DEA /* Cocoa.framework */; };
 		8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */; };
 		8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */; };
 		8507ED241D8B274C003A7DEA /* SwiftyLinter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 		8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
+		8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,16 +61,16 @@
 		8507ECF71D8B2631003A7DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8507ECF91D8B2631003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8507ECFE1D8B2631003A7DEA /* SwinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwinterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8507ED021D8B2631003A7DEA /* SwinterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinterTests.swift; sourceTree = "<group>"; };
 		8507ED041D8B2631003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8507ED0D1D8B2695003A7DEA /* LintSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintSpace.swift; sourceTree = "<group>"; };
-		8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacerTests.swift; sourceTree = "<group>"; };
+		8507ED0F1D8B26B5003A7DEA /* ColonSpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonSpacerTests.swift; sourceTree = "<group>"; };
 		8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftyLinter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8507ED181D8B274C003A7DEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8507ED1C1D8B274C003A7DEA /* SwiftyLinter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyLinter.entitlements; sourceTree = "<group>"; };
 		8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		8507ED211D8B274C003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommaSpaceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +132,8 @@
 		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
 			isa = PBXGroup;
 			children = (
-				8507ED0F1D8B26B5003A7DEA /* SpacerTests.swift */,
-				8507ED021D8B2631003A7DEA /* SwinterTests.swift */,
+				8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */,
+				8507ED0F1D8B26B5003A7DEA /* ColonSpacerTests.swift */,
 				8507ED041D8B2631003A7DEA /* Info.plist */,
 			);
 			path = SwinterTests;
@@ -332,9 +332,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8507ED031D8B2631003A7DEA /* SwinterTests.swift in Sources */,
 				8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */,
-				8507ED101D8B26B5003A7DEA /* SpacerTests.swift in Sources */,
+				8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */,
+				8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +582,7 @@
 				8507ED091D8B2631003A7DEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8507ED0A1D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "SwinterTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +591,7 @@
 				8507ED0C1D8B2631003A7DEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8507ED251D8B274C003A7DEA /* Build configuration list for PBXNativeTarget "SwiftyLinter" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +600,7 @@
 				8507ED271D8B274C003A7DEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

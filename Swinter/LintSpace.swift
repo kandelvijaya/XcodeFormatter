@@ -10,6 +10,12 @@ import Foundation
 
 final class LintSpace {
     
+    //NOTE:- Try it on www.regex101.com
+    fileprivate enum RegexPattern: String {
+        case Colon = ".(:)([^ ]|[ ]{2,})."
+        case Comma = ".(,)([^ ]|[ ]{2,})."
+    }
+    
     fileprivate enum SpaceMatchType {
         case NoSpace
         case MultipleSpace(spaceCount: Int)
@@ -20,11 +26,12 @@ final class LintSpace {
         let matchRange: Range<String.Index>
     }
     
-    func ensureOneSpaceAfterColon(line: String) -> String {
-        guard let regex = regexForColonSpace() else { return line }
-        let matchedRanges = findAllMatchRanges(in: line, with: regex)
-        let correctedLine = correctColonSpace(for: line, at: matchedRanges)
-        return correctedLine
+    func correctColonSpace(line: String) -> String {
+        return corrected(line: line, forInconsistent: .Colon)
+    }
+    
+    func correctCommaSeparation(line: String) -> String {
+        return corrected(line: line, forInconsistent: .Comma)
     }
     
 }
@@ -32,6 +39,13 @@ final class LintSpace {
 //MARK:- Private methods
 
 extension LintSpace {
+    
+    fileprivate func corrected(line: String, forInconsistent pattern: RegexPattern) -> String {
+        guard let regex = regexForColonSpace(pattern: pattern) else { return line }
+        let matchedRanges = findAllMatchRanges(in: line, with: regex)
+        let correctedLine = correctColonSpace(for: line, at: matchedRanges)
+        return correctedLine
+    }
 
     fileprivate func correctColonSpace(for lineString: String, at matchedRanges: [SpaceMatchedRange]) -> String {
         var rangePositonOffset = 0
@@ -57,15 +71,12 @@ extension LintSpace {
         return correctedLine
     }
     
-    fileprivate func regexForColonSpace() -> NSRegularExpression? {
-        //NOTE:- Try it on www.regex101.com
-        let inconsistentColonSpaceRegex = ".(:)([^ ]|[ ]{2,})."
-        
+    fileprivate func regexForColonSpace(pattern: RegexPattern) -> NSRegularExpression? {
         do {
-            let regex = try NSRegularExpression(pattern: inconsistentColonSpaceRegex, options: [])
+            let regex = try NSRegularExpression(pattern: pattern.rawValue, options: [])
             return regex
         } catch {
-            print("Bad Regular Expression \(inconsistentColonSpaceRegex)")
+            print("Bad Regular Expression \(pattern.rawValue)")
             return nil
         }
     }
