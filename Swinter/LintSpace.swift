@@ -12,11 +12,6 @@ typealias MatchCorrectionRule = [Int: String]
 
 final class LintSpace {
     
-    // These regular expression should have 2nd capture group
-    // which does only include ___X where X
-    // is the first character after space
-    // and _ represents a single space
-    // In case when there is no space it should match X only
     //NOTE:- Try it on www.regex101.com
     fileprivate enum MatchPattern: String {
         case colon = "[\\S]([ ]*)(:)([ ]*)(?=[\\S])"
@@ -60,16 +55,19 @@ final class LintSpace {
     
     func correctColonSpace(line: String) -> String {
         guard let regex = MatchPattern.colon.regex else { return line }
-        let rules = [1: "", 3: " "]
+        let rules = [0: "", 2: " "]
         let matchCorrection = MatchCorrection(regex: regex, forString: line, correctionRules: rules)
         return correctMatches(with: matchCorrection)
     }
     
+    func correctCommaSeparation(line: String) -> String { return line }
+    func correctFunctionReturnArrow(line: String) -> String { return line }
+    func correctTrailingCurlyBracket(line: String) -> String { return line }
+    
     fileprivate func correctMatches(with matchCorrection: MatchCorrection) -> String {
         let matches = findAllMatches(in: matchCorrection.line, with: matchCorrection.regex)
         let corrected = correct(line: matchCorrection.line, at: matches, with: matchCorrection.rules)
-        
-        return matchCorrection.line
+        return corrected
     }
     
 }
@@ -77,27 +75,24 @@ final class LintSpace {
 //MARK:- Private methods
 
 extension LintSpace {
-
-    /*fileprivate func correctColonSpace(for lineString: String, at matchedRanges: [SpaceMatchedRange]) -> String {
-        var rangePositonOffset = 0
-        var correctedLine = lineString
-        
-        for currentMatchedRange in matchedRanges {
-            let newLowerIndex = correctedLine.index(currentMatchedRange.matchRange.lowerBound, offsetBy: rangePositonOffset)
-            let newUpperIndex = correctedLine.index(currentMatchedRange.matchRange.upperBound, offsetBy: rangePositonOffset)
-            let correctedRange = Range(uncheckedBounds: (newLowerIndex, newUpperIndex))
-            
-            rangePositonOffset += 1 - currentMatchedRange.spaceCount //1 for new " "
-            correctedLine.replaceSubrange(correctedRange, with: " ")
-        }
-        
-        return correctedLine
-    }*/
     
     fileprivate func correct(line: String, at matches: [Match], with rules: MatchCorrectionRule) -> String {
+        var correctedLine = line
+        var offset = 0
         
-        
-        return line
+        matches.forEach {
+            for (index, cpRange) in $0.matches.enumerated() {
+                if let replaceMent = rules[index] {
+                    
+                    let currentRange = rangeFrom(range: cpRange.range, forString: correctedLine, offset: offset)
+                    let currentOffset = -cpRange.content.characters.count + replaceMent.characters.count
+                    offset += currentOffset
+                    
+                    correctedLine.replaceSubrange(currentRange, with: replaceMent)
+                }
+            }
+        }
+        return correctedLine
     }
 
     
@@ -118,7 +113,13 @@ extension LintSpace {
     
     private func rangeFrom(nsrange: NSRange, forString: String) -> Range<String.Index> {
         let lowerIndex = forString.index(forString.startIndex, offsetBy: nsrange.location)
-        let upperIndex = forString.index(forString.startIndex, offsetBy: nsrange.location)
+        let upperIndex = forString.index(forString.startIndex, offsetBy: nsrange.location + nsrange.length)
+        return Range(uncheckedBounds: (lowerIndex, upperIndex))
+    }
+    
+    private func rangeFrom(range: Range<String.Index>, forString: String, offset: Int) -> Range<String.Index> {
+        let lowerIndex = forString.index(range.lowerBound, offsetBy: offset)
+        let upperIndex = forString.index(range.upperBound, offsetBy: offset)
         return Range(uncheckedBounds: (lowerIndex, upperIndex))
     }
 
