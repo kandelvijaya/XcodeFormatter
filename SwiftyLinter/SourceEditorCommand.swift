@@ -73,12 +73,12 @@ extension SourceEditorCommand {
             let colonCorrected = LintSpace().correctColonSpace(line: string)
             
             //3. Comma
-            let colonCommaCorrected = LintSpace().correctCommaSeparation(line: colonCorrected)
+            //let colonCommaCorrected = LintSpace().correctCommaSeparation(line: colonCorrected)
 
             // ->
-            let allCorrected = LintSpace().correctFunctionReturnArrow(line: colonCommaCorrected)
+            //let allCorrected = LintSpace().correctFunctionReturnArrow(line: colonCommaCorrected)
 
-            return allCorrected
+            return colonCorrected
         }
     }
     
