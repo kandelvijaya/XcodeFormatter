@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias MatchCorrectionRule = [Int: String]
+
 final class LintSpace {
     
     // These regular expression should have 2nd capture group
@@ -16,32 +18,58 @@ final class LintSpace {
     // and _ represents a single space
     // In case when there is no space it should match X only
     //NOTE:- Try it on www.regex101.com
-    fileprivate enum RegexPattern: String {
-        case colon = ".([:])([\\S]|[ ]{2,}[\\S])"
-        case comma = ".(,)([\\S]|[ ]{2,}[\\S])"
-        case functionReturnArrow = ".(->)([\\S]|[ ]{2,}[\\S])"
+    fileprivate enum MatchPattern: String {
+        case colon = "[\\S]([ ]*)(:)([ ]*)(?=[\\S])"
+        case comma = "[\\S]([ ]*)(,)([ ]*)(?=[\\S])"
+        case functionReturnArrow = "[\\S]([ ]*)(->)([ ]*)(?=[\\S])"
         case trailingCurlyBracket = "([^\\(\\.\\[\\s])([\\{]|[ ]{2,}\\{)"
+        
+        var regex: NSRegularExpression? {
+            do {
+                let regex = try NSRegularExpression(pattern: self.rawValue, options: [])
+                return regex
+            } catch {
+                print("Bad Regular Expression \(self.rawValue)")
+                return nil
+            }
+        }
     }
     
-    fileprivate struct SpaceMatchedRange {
-        let spaceCount: Int
-        let matchRange: Range<String.Index>
+    fileprivate struct MatchCorrection {
+        
+        let regex: NSRegularExpression
+        let line: String
+        let rules: MatchCorrectionRule      //correction rule
+        
+        init(regex: NSRegularExpression, forString line: String, correctionRules rules: [Int: String]) {
+            self.regex = regex
+            self.line = line
+            self.rules = rules
+        }
+        
+    }
+    
+    fileprivate struct Match {
+        let matches: [CaptureGroupMatchRange]
+    }
+    
+    fileprivate struct CaptureGroupMatchRange {
+        let content: String
+        let range: Range<String.Index>
     }
     
     func correctColonSpace(line: String) -> String {
-        return corrected(line: line, forInconsistent: .colon)
+        guard let regex = MatchPattern.colon.regex else { return line }
+        let rules = [1: "", 3: " "]
+        let matchCorrection = MatchCorrection(regex: regex, forString: line, correctionRules: rules)
+        return correctMatches(with: matchCorrection)
     }
     
-    func correctCommaSeparation(line: String) -> String {
-        return corrected(line: line, forInconsistent: .comma)
-    }
-
-    func correctFunctionReturnArrow(line: String) -> String {
-        return corrected(line: line, forInconsistent: .functionReturnArrow)
-    }
-    
-    func correctTrailingCurlyBracket(line: String) -> String {
-        return corrected(line: line, forInconsistent: .trailingCurlyBracket)
+    fileprivate func correctMatches(with matchCorrection: MatchCorrection) -> String {
+        let matches = findAllMatches(in: matchCorrection.line, with: matchCorrection.regex)
+        let corrected = correct(line: matchCorrection.line, at: matches, with: matchCorrection.rules)
+        
+        return matchCorrection.line
     }
     
 }
@@ -49,15 +77,8 @@ final class LintSpace {
 //MARK:- Private methods
 
 extension LintSpace {
-    
-    fileprivate func corrected(line: String, forInconsistent pattern: RegexPattern) -> String {
-        guard let regex = regexForColonSpace(pattern: pattern) else { return line }
-        let matchedRanges = findAllMatchRanges(in: line, with: regex)
-        let correctedLine = correctColonSpace(for: line, at: matchedRanges)
-        return correctedLine
-    }
 
-    fileprivate func correctColonSpace(for lineString: String, at matchedRanges: [SpaceMatchedRange]) -> String {
+    /*fileprivate func correctColonSpace(for lineString: String, at matchedRanges: [SpaceMatchedRange]) -> String {
         var rangePositonOffset = 0
         var correctedLine = lineString
         
@@ -71,38 +92,33 @@ extension LintSpace {
         }
         
         return correctedLine
-    }
+    }*/
     
-    fileprivate func regexForColonSpace(pattern: RegexPattern) -> NSRegularExpression? {
-        do {
-            let regex = try NSRegularExpression(pattern: pattern.rawValue, options: [])
-            return regex
-        } catch {
-            print("Bad Regular Expression \(pattern.rawValue)")
-            return nil
-        }
+    fileprivate func correct(line: String, at matches: [Match], with rules: MatchCorrectionRule) -> String {
+        
+        
+        return line
     }
+
     
-    fileprivate func findAllMatchRanges(in lineString: String, with regex: NSRegularExpression) -> [SpaceMatchedRange] {
-        var matchedRanges: [SpaceMatchedRange] = []
+    fileprivate func findAllMatches(in lineString: String, with regex: NSRegularExpression) -> [Match] {
+        var matches: [Match] = []
         
         regex.enumerateMatches(in: lineString, options: .reportCompletion, range: NSMakeRange(0, lineString.characters.count), using: { (textCheckingResult, flags, status) in
             
             if let textChecking = textCheckingResult {
-                let secondCaptureGroupRange = textChecking.rangeAt(2)
-                //Offset because Last char in the range is for X
-                let matchedRange = rangeFrom(nsrange: secondCaptureGroupRange, forString: lineString, offset: -1)
-                let matchedString = lineString.substring(with: matchedRange)
-                let spaceRange = SpaceMatchedRange(spaceCount: matchedString.characters.count, matchRange: matchedRange)
-                matchedRanges.append(spaceRange)
+                let cpRanges = [1,2,3].map(textChecking.rangeAt).map{ rangeFrom(nsrange: $0, forString: lineString) }
+                let cpContent = cpRanges.map { lineString.substring(with: $0) }
+                let cpMatchRanges = zip(cpContent, cpRanges).reduce([]){ $0 +  [CaptureGroupMatchRange(content: $1.0, range: $1.1)] }
+                matches.append(Match(matches: cpMatchRanges))
             }
         })
-        return matchedRanges
+        return matches
     }
     
-    private func rangeFrom(nsrange: NSRange, forString: String, offset: Int) -> Range<String.Index> {
+    private func rangeFrom(nsrange: NSRange, forString: String) -> Range<String.Index> {
         let lowerIndex = forString.index(forString.startIndex, offsetBy: nsrange.location)
-        let upperIndex = forString.index(forString.startIndex, offsetBy: nsrange.location + nsrange.length + offset)
+        let upperIndex = forString.index(forString.startIndex, offsetBy: nsrange.location)
         return Range(uncheckedBounds: (lowerIndex, upperIndex))
     }
 
