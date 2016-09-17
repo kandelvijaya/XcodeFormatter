@@ -22,7 +22,7 @@ class ReturnArrowSpacerTests: XCTestCase {
 
     func testThat_MultipleSpacesAfterArrow_isReplacedWithSingleSpace() {
         let input = "func some()->       A"
-        let expected = "func some()-> A"
+        let expected = "func some() -> A"
 
         let output = LintSpace().correctFunctionReturnArrow(line: input)
 
@@ -40,7 +40,7 @@ class ReturnArrowSpacerTests: XCTestCase {
 
     func testThat_MultipleArrows_areFormattedProperly() {
         let input = "func madmap(closure: (Element ->U?), anotherClosure: A->Bool) ->    E"
-        let expected = "func madmap(closure: (Element -> U?), anotherClosure: A-> Bool) -> E"
+        let expected = "func madmap(closure: (Element -> U?), anotherClosure: A -> Bool) -> E"
 
         let output = LintSpace().correctFunctionReturnArrow(line: input)
 
