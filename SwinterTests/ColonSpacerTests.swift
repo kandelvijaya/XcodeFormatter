@@ -72,4 +72,14 @@ class ColonSpacerTests: XCTestCase {
         
         XCTAssertEqual(expected, output)
     }
+    
+    func testThat_MultipleColonInMiddle_AreCorrected() {
+        let input = "[0 : Apple, 1   :Ball, 3:Cat, 4   :    Dog, 5:         Elephant]"
+        let expected = "[0: Apple, 1: Ball, 3: Cat, 4: Dog, 5: Elephant]"
+        
+        let output = LintSpace().correctColonSpace(line: input)
+        
+        XCTAssertEqual(expected, output)
+    }
+    
 }

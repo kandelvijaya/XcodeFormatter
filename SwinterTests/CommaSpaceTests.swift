@@ -46,5 +46,14 @@ final class CommaSpaceTests: XCTestCase {
         
         XCTAssertEqual(expected, output)
     }
+    
+    func testThat_SpaceBeforeComma_IsTrimmed() {
+        let input = "(x:Int    , y: Int)"
+        let expected = "(x:Int, y: Int)"
+        
+        let output = LintSpace().correctCommaSeparation(line: input)
+        
+        XCTAssertEqual(expected, output)
+    }
 
 }

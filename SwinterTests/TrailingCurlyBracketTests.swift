@@ -49,7 +49,7 @@ final class TrailingCurlyBracketTests: XCTestCase {
     
     func testThat_MapConstruct_IsNotCorrected() {
         let input = "a.map{ $0.something()}.filter({ }).then{"
-        let expected = "a.map { $0.something()}.filter({ }).then {"
+        let expected = "a.map{ $0.something()}.filter({ }).then {"
         
         let output = LintSpace().correctTrailingCurlyBracket(line: input)
         
