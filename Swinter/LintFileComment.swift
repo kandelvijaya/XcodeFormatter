@@ -6,7 +6,7 @@ import Foundation
 
 final class LintFileComment {
     
-    private let regexPattern = "(\\/\\/\\n\\/\\/.*.swift\\n)\\/\\/.*\\n\\/\\/\\n\\/\\/.*\\n(\\/\\/.*\\n\\/\\/\n)"
+    private let regexPattern = "^(\\/\\/\\n\\/\\/.*.swift\\n)\\/\\/.*\\n\\/\\/\\n\\/\\/.*\\n(\\/\\/.*\\n\\/\\/\n)"
     
     func extractNewCommentLines(from content: String) -> [String] {
         guard let regex = NSRegularExpression.regexFrom(pattern: regexPattern) else {

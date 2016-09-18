@@ -28,6 +28,7 @@
 		8507ED391D8E77AB003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
 		8507ED3A1D8E798B003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
 		8507ED3B1D8E798B003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
+		8507ED3D1D8ED9C3003A7DEA /* CommentLintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailingCurlyBracketTests.swift; sourceTree = "<group>"; };
 		8507ED321D8D8906003A7DEA /* Regexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regexp.swift; sourceTree = "<group>"; };
 		8507ED381D8E77AB003A7DEA /* LintFileComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintFileComment.swift; sourceTree = "<group>"; };
+		8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLintTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */,
 				8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */,
 				2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */,
 				8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */,
@@ -356,6 +359,7 @@
 				8507ED341D8D965B003A7DEA /* Regexp.swift in Sources */,
 				8507ED311D8C8198003A7DEA /* TrailingCurlyBracketTests.swift in Sources */,
 				8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */,
+				8507ED3D1D8ED9C3003A7DEA /* CommentLintTests.swift in Sources */,
 				2857BC161D8BF1B800E22971 /* ReturnArrowSpacerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
