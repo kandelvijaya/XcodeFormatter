@@ -17,38 +17,6 @@
             endingLineNumber = "12"
             landmarkName = "extractNewCommentLines(from:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Swinter.LintFileComment.extractNewCommentLines (from : Swift.String) -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "Swinter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/LintFileComment.swift"
-                  timestampString = "495903433.490344"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "38">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwinterTests.LintFileComment.extractNewCommentLines (from : Swift.String) -&gt; Swift.Array&lt;Swift.String&gt;"
-                  moduleName = "SwinterTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/LintFileComment.swift"
-                  timestampString = "495903434.042571"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "12"
-                  endingLineNumber = "12"
-                  offsetFromSymbolStart = "38">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

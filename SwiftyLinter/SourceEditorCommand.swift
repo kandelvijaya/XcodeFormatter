@@ -13,26 +13,30 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         
-        //Switch between command names and forward to the right method
-        
+        //TODO: Switch between command names and forward to the right method
         markClassFinalUnlessOpenSpecified(invocation: invocation)
         ensureProperSpacing(invocation: invocation)
         ensureProperFileComment(invocation: invocation)
+        ensureProperEmptyLines(invocation: invocation)
         completionHandler(nil)
     }
     
-    //NOTE: App seems to crash when mutating the complete buffer directly.
-    func ensureProperFileComment(invocation: XCSourceEditorCommandInvocation) {
-        let newFileCommentLines = LintFileComment().extractNewCommentLines(from: invocation.buffer.completeBuffer)
-        guard !newFileCommentLines.isEmpty else { return }
-        //There usually are 7 lines of default Xcode comment template.
-        (0..<7).forEach{ _ in invocation.buffer.lines.removeObject(at: 0) }
-        
-        for value in newFileCommentLines.reversed() {
-            invocation.buffer.lines.insert(value, at: 0)
-        }
-    }
+    //MARK:- Private Methods
     
+    fileprivate func forEachLine(invocation: XCSourceEditorCommandInvocation, check: (String) -> String?) {
+        let originalLines = invocation.buffer.lines
+        var changed: [Int: String] = [:]
+        
+        for (counter, lineContent) in originalLines.enumerated() {
+            let lineString = String(describing: lineContent)
+            if let modified = check(lineString) {
+                changed[counter] = modified
+            }
+        }
+        
+        //mdofiy the lines array
+        changed.forEach{ invocation.buffer.lines[$0] = $1 }
+    }
 }
 
 
@@ -94,19 +98,37 @@ extension SourceEditorCommand {
         }
     }
     
-    func forEachLine(invocation: XCSourceEditorCommandInvocation, check: (String) -> String?) {
-        let originalLines = invocation.buffer.lines
-        var changed: [Int: String] = [:]
+}
+
+extension SourceEditorCommand {
+    
+    //NOTE: App seems to crash when mutating the complete buffer directly.
+    func ensureProperFileComment(invocation: XCSourceEditorCommandInvocation) {
+        let newFileCommentLines = LintFileComment().extractNewCommentLines(from: invocation.buffer.completeBuffer)
+        guard !newFileCommentLines.isEmpty else { return }
+        //There usually are 7 lines of default Xcode comment template.
+        (0..<7).forEach{ _ in invocation.buffer.lines.removeObject(at: 0) }
         
-        for (counter, lineContent) in originalLines.enumerated() {
-            let lineString = String(describing: lineContent)
-            if let modified = check(lineString) {
-                changed[counter] = modified
-            }
+        for value in newFileCommentLines.reversed() {
+            invocation.buffer.lines.insert(value, at: 0)
+        }
+    }
+    
+}
+
+extension SourceEditorCommand {
+    
+    //1. Ensure empty lines at opening and ending of code blocks for Types
+    //          Protocol | enum | struct | class
+    //2. Ensure 1 empty line at the EOF
+    //3. Ensure 1 empty line between functions
+    //4. Ensure 1 empty line before and after //MARK:
+    func ensureProperEmptyLines(invocation: XCSourceEditorCommandInvocation) {
+        guard let lines = invocation.buffer.lines.copy() as? [String] else {
+            return
         }
         
-        //mdofiy the lines array
-        changed.forEach{ invocation.buffer.lines[$0] = $1 }
+        let emptyLineReuiredLineIndex = LintLine().emptyLineRequiredAtLinesFor(content: lines)
     }
     
 }
