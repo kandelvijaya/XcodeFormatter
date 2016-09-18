@@ -32,6 +32,28 @@ struct CodeBlock {
         type = typeForCodeBlock()
     }
 
+    func lineIndexesOfEmptyLinesAtStart(content: [String]) -> [Int] {
+        var accumulator = [Int]()
+        var currentLineIndex = self.start.line + 1
+        
+        while content[currentLineIndex] == "/n" {
+            accumulator.append(currentLineIndex)
+            currentLineIndex += 1
+        }
+        return accumulator
+    }
+    
+    func lineIndexesOfEmptyLinesBeforeEnd(content: [String]) -> [Int] {
+        var accumulator = [Int]()
+        var currentLineIndex = self.start.line - 1
+        
+        while content[currentLineIndex] == "/n" {
+            accumulator.append(currentLineIndex)
+            currentLineIndex -= 1
+        }
+        return accumulator
+    }
+    
     ///Type information is usually encoded into the starting line.
     ///Not doing so is a bad coding design in this projects case.
     /// For example:

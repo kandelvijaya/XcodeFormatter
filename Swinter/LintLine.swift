@@ -20,6 +20,18 @@ extension LintLine {
     fileprivate func emptyLinesRequiredForCodeBlock(in content: [String]) -> [Int] {
         let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: content)
         
+        let allPrimaryCodeBlocks = allCodeBlocks.filter{
+            if let type = $0.type, type != CodeBlockType.OtherKind {
+                return true
+            }
+            return false
+        }
+        
+        allPrimaryCodeBlocks.reduce([Int]()){
+            $0 + $1.lineIndexesOfEmptyLinesBeforeEnd(content: content)
+        }
+        
+        
         
         return [Int]()
     }
