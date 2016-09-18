@@ -17,8 +17,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         markClassFinalUnlessOpenSpecified(invocation: invocation)
         ensureProperSpacing(invocation: invocation)
-        
+        ensureProperFileComment(invocation: invocation)
         completionHandler(nil)
+    }
+    
+    func ensureProperFileComment(invocation: XCSourceEditorCommandInvocation) {
+        let corrected = LintFileComment().correct(content: invocation.buffer.completeBuffer)
+        invocation.buffer.completeBuffer = corrected
     }
     
 }

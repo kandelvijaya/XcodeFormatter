@@ -28,7 +28,7 @@ final class LintSpace {
     func correctColonSpace(line: String) -> String {
         guard let regex = MatchPattern.colon.regex else { return line }
         guard line.contains(":") else { return line }
-        let rules = [0: "", 2: " "]
+        let rules = [1: "", 3: " "]
         let matchCorrection = MatchCorrection(regex: regex, forString: line, correctionRules: rules)
         return Regexp.correctMatches(with: matchCorrection)
     }
@@ -36,21 +36,21 @@ final class LintSpace {
     func correctCommaSeparation(line: String) -> String {
         guard let regex = MatchPattern.comma.regex else { return line }
         guard line.contains(",") else { return line }
-        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [0: "", 2: " "] )
+        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [1: "", 3: " "] )
         return Regexp.correctMatches(with: matchCorrection)
     }
     
     func correctFunctionReturnArrow(line: String) -> String {
         guard let regex = MatchPattern.functionReturnArrow.regex else { return line }
         guard line.contains("->") else { return line }
-        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [0: " ", 2: " "] )
+        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [1: " ", 3: " "] )
         return Regexp.correctMatches(with: matchCorrection)
     }
     
     func correctTrailingCurlyBracket(line: String) -> String {
         guard let regex = MatchPattern.trailingCurlyBracket.regex else { return line }
         guard line.contains("{") else { return line }
-        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [1: " "] )
+        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [2: " "] )
         return Regexp.correctMatches(with: matchCorrection)
     }
 

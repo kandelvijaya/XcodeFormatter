@@ -9,54 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Swinter/LintSpace.swift"
-            timestampString = "495820967.183005"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "correctTrailingCurlyBracket(line:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Swinter.LintSpace.correctTrailingCurlyBracket (line : Swift.String) -&gt; Swift.String"
-                  moduleName = "Swinter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/LintSpace.swift"
-                  timestampString = "495821399.48208"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwinterTests.LintSpace.correctTrailingCurlyBracket (line : Swift.String) -&gt; Swift.String"
-                  moduleName = "SwinterTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/LintSpace.swift"
-                  timestampString = "495821399.569986"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Swinter/Regexp.swift"
             timestampString = "495821326.19291"
             startingColumnNumber = "9223372036854775807"
@@ -74,7 +26,7 @@
                   moduleName = "Swinter"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
-                  timestampString = "495821399.490763"
+                  timestampString = "495877271.81649"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -89,60 +41,12 @@
                   moduleName = "SwinterTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
-                  timestampString = "495821399.576598"
+                  timestampString = "495877272.106111"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
                   endingLineNumber = "106"
                   offsetFromSymbolStart = "604">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Swinter/Regexp.swift"
-            timestampString = "495821416.919331"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "correctMatches(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Swinter.Regexp.correctMatches (with : Swinter.MatchCorrection) -&gt; Swift.String"
-                  moduleName = "Swinter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
-                  timestampString = "495821416.927035"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "127">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static SwinterTests.Regexp.correctMatches (with : SwinterTests.MatchCorrection) -&gt; Swift.String"
-                  moduleName = "SwinterTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
-                  timestampString = "495821416.928898"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "127">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -170,7 +74,7 @@
                   moduleName = "Swinter"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
-                  timestampString = "495821421.29509"
+                  timestampString = "495877271.819639"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
@@ -185,12 +89,60 @@
                   moduleName = "SwinterTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
-                  timestampString = "495821421.297036"
+                  timestampString = "495877272.109342"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "77"
                   endingLineNumber = "77"
                   offsetFromSymbolStart = "654">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swinter/Regexp.swift"
+            timestampString = "495877145.035536"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "correct(line:at:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Swinter.Regexp.((correct in _7AD9D6CF0A30D591B0D3401F55B58935) (line : Swift.String, at : Swift.Array&lt;Swinter.(Match in _7AD9D6CF0A30D591B0D3401F55B58935)&gt;, with : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;) -&gt; Swift.String).(closure #1)"
+                  moduleName = "Swinter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
+                  timestampString = "495877271.822339"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "951">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SwinterTests.Regexp.((correct in _BAD0392154CC300388126E09010E4B1A) (line : Swift.String, at : Swift.Array&lt;SwinterTests.(Match in _BAD0392154CC300388126E09010E4B1A)&gt;, with : Swift.Dictionary&lt;Swift.Int, Swift.String&gt;) -&gt; Swift.String).(closure #1)"
+                  moduleName = "SwinterTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/Regexp.swift"
+                  timestampString = "495877272.112406"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "951">
                </Location>
             </Locations>
          </BreakpointContent>

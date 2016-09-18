@@ -25,6 +25,9 @@
 		8507ED331D8D8906003A7DEA /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* Regexp.swift */; };
 		8507ED341D8D965B003A7DEA /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* Regexp.swift */; };
 		8507ED351D8D9663003A7DEA /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* Regexp.swift */; };
+		8507ED391D8E77AB003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
+		8507ED3A1D8E798B003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
+		8507ED3B1D8E798B003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,7 @@
 		8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommaSpaceTests.swift; sourceTree = "<group>"; };
 		8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailingCurlyBracketTests.swift; sourceTree = "<group>"; };
 		8507ED321D8D8906003A7DEA /* Regexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regexp.swift; sourceTree = "<group>"; };
+		8507ED381D8E77AB003A7DEA /* LintFileComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintFileComment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 			children = (
 				8507ED0D1D8B2695003A7DEA /* LintSpace.swift */,
 				8507ED321D8D8906003A7DEA /* Regexp.swift */,
+				8507ED381D8E77AB003A7DEA /* LintFileComment.swift */,
 			);
 			name = Linters;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			files = (
 				8507ED331D8D8906003A7DEA /* Regexp.swift in Sources */,
 				8507ECF31D8B2631003A7DEA /* ViewController.swift in Sources */,
+				8507ED391D8E77AB003A7DEA /* LintFileComment.swift in Sources */,
 				8507ED0E1D8B2695003A7DEA /* LintSpace.swift in Sources */,
 				8507ECF11D8B2631003A7DEA /* AppDelegate.swift in Sources */,
 			);
@@ -345,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */,
+				8507ED3B1D8E798B003A7DEA /* LintFileComment.swift in Sources */,
 				8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */,
 				8507ED341D8D965B003A7DEA /* Regexp.swift in Sources */,
 				8507ED311D8C8198003A7DEA /* TrailingCurlyBracketTests.swift in Sources */,
@@ -359,6 +366,7 @@
 			files = (
 				8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */,
 				8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */,
+				8507ED3A1D8E798B003A7DEA /* LintFileComment.swift in Sources */,
 				8507ED351D8D9663003A7DEA /* Regexp.swift in Sources */,
 				8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */,
 			);

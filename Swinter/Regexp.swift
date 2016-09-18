@@ -60,16 +60,16 @@ final class Regexp {
     }
     
     
-    static fileprivate func findAllMatches(in lineString: String, with regex: NSRegularExpression) -> [Match] {
+    static fileprivate func findAllMatches(in contentString: String, with regex: NSRegularExpression) -> [Match] {
         var matches: [Match] = []
         
-        regex.enumerateMatches(in: lineString, options: .reportCompletion, range: NSMakeRange(0, lineString.characters.count), using: { (textCheckingResult, flags, status) in
+        regex.enumerateMatches(in: contentString, options: .reportCompletion, range: NSMakeRange(0, contentString.characters.count), using: { (textCheckingResult, flags, status) in
             
             if let textChecking = textCheckingResult {
-                let cpRanges = (1..<textChecking.numberOfRanges)
+                let cpRanges = (0..<textChecking.numberOfRanges)
                     .map{ textChecking.rangeAt($0) }
-                    .map{ $0.toRange(forString: lineString) }
-                let cpContent = cpRanges.map { lineString.substring(with: $0) }
+                    .map{ $0.toRange(forString: contentString) }
+                let cpContent = cpRanges.map { contentString.substring(with: $0) }
                 let cpMatchRanges = zip(cpContent, cpRanges).reduce([]){ $0 + [CaptureGroupMatchRange(content: $1.0, range: $1.1)] }
                 matches.append(Match(matches: cpMatchRanges))
             }
