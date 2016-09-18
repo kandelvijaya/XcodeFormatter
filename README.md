@@ -1,4 +1,12 @@
 #SwiftyLinter
+[![Platform](https://img.shields.io/badge/platform-xcode8-blue.svg?style=flat
+)](https://developer.apple.com/iphone/index.action)
+[![Language](https://img.shields.io/badge/language-swift3-brightgreen.svg?style=flat
+)](https://developer.apple.com/swift)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
+)](http://mit-license.org)
+[![Twitter](https://img.shields.io/badge/twitter-@kandelvijaya-blue.svg?style=flat)](http://twitter.com/kandelvijaya)
+
 Xcode Swift Coding Guidelines Linter. 
 (This is compatible with Swift3, Xcode 8 and macOS Sierra )
 
