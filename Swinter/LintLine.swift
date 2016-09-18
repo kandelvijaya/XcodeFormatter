@@ -7,7 +7,7 @@ import Foundation
 final class LintLine {
 
     func emptyLineRequiredAtLinesFor(content: [String]) -> [Int] {
-        return emptyLineRequiredAtLinesFor(content: content) + emptyLinesRequiredForEOF(in: content)
+        return emptyLinesRequiredForCodeBlock(in: content)
     }
     
 }
@@ -18,10 +18,11 @@ extension LintLine {
     
     //MARK: Required empty lines
     fileprivate func emptyLinesRequiredForCodeBlock(in content: [String]) -> [Int] {
-        content.forEach{ line in
-            
-            Regexp.findAllMatches(in: line, with: <#T##NSRegularExpression#>)
-        }
+        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: content)
+        
+        //Decide where to add and where to remove
+        
+        return [Int]()
     }
     
     fileprivate func emptyLinesRequiredForEOF(in content: [String]) -> [Int] {

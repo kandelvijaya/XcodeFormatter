@@ -54,4 +54,26 @@ final class CodeBlockAnalyzer {
         }
     }
     
+    func codeBlocks(for content: [String]) -> [CodeBlock] {
+        let codeAnalyzer = CodeBlockAnalyzer()
+        for (lineIndex, line) in content.enumerated() {
+            
+            for (section, char) in line.characters.enumerated() {
+                switch String(char) {
+                case CodeBlockIndicator.opening.rawValue:
+                    let codePosition = CodePosition(line: lineIndex, section: section, indicator: .opening)
+                    codeAnalyzer.add(codePosition: codePosition)
+                case CodeBlockIndicator.closing.rawValue:
+                    let codePosition = CodePosition(line: lineIndex, section: section, indicator: .closing)
+                    codeAnalyzer.add(codePosition: codePosition)
+                default:
+                    break
+                }
+            }
+            
+        }
+        
+        return codeAnalyzer.identifiedCodeBlocks
+    }
+    
 }
