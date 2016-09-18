@@ -29,14 +29,14 @@ Xcode Swift Coding Guidelines Linter.
   * `sum(a: Int,    b:Int)` -> `sum(a: Int, b:Int)`
   * `sum(a: Int       ,b:Int)` -> `sum(a: Int, b:Int)`
 5. Before/After return type symbol
-  *. `)->Int{` -> `) -> Int{` 
-  *. `)     -> Int{` ->  `) -> Int{`
-6. Trailing `{`
-  *. `do(){` -> `do() {` 
-  *. `do()   {` -> `do() {` 
-  *. `class A{` -> `class A {`
-  *. `x.map{--}.filter{--}` -> `x.map {--}. {--}`
-  *. `else{` -> `else {`
+  * `)->Int{` -> `) -> Int{` 
+  * `)     -> Int{` ->  `) -> Int{`
+6. Trailing `{` symbol
+  * `do(){` -> `do() {` 
+  * `do()   {` -> `do() {` 
+  * `class A{` -> `class A {`
+  * `x.map{--}.filter{--}` -> `x.map {--}. {--}`
+  * `else{` -> `else {`
 7. Auto Format Comment at the begining of the file
 
 ## In progress
