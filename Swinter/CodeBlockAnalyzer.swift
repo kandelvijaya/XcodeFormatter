@@ -9,26 +9,6 @@ enum CodeBlockIndicator: String {
     case closing = "}"
 }
 
-struct CodePosition {
-    let line: Int
-    let section: Int
-    let indicator: CodeBlockIndicator
-    
-    static func arePair(openingPosition: CodePosition, endingPosition: CodePosition) -> Bool {
-        switch (openingPosition.indicator, endingPosition.indicator) {
-        case (.opening, .closing):
-            return true
-        default:
-            return false
-        }
-    }
-}
-
-struct CodeBlock {
-    let start: CodePosition
-    let end: CodePosition
-}
-
 final class CodeBlockAnalyzer {
     
     private var toBeAnalysedCodePosition = [CodePosition]()
@@ -46,7 +26,7 @@ final class CodeBlockAnalyzer {
         }
         
         if CodePosition.arePair(openingPosition: lastCodePosition, endingPosition: codePosition) {
-            let codeBlock = CodeBlock(start: lastCodePosition, end: codePosition)
+            let codeBlock = CodeBlock(startPosition: lastCodePosition, endPosition: codePosition)
             identifiedCodeBlocks.append(codeBlock)
             toBeAnalysedCodePosition.removeLast()
         } else {
@@ -56,16 +36,16 @@ final class CodeBlockAnalyzer {
     
     func codeBlocks(for content: [String]) -> [CodeBlock] {
         let codeAnalyzer = CodeBlockAnalyzer()
-        for (lineIndex, line) in content.enumerated() {
+        for (lineIndex, lineContent) in content.enumerated() {
             
-            for (section, char) in line.characters.enumerated() {
+            for (section, char) in lineContent.characters.enumerated() {
                 switch String(char) {
                 case CodeBlockIndicator.opening.rawValue:
-                    let codePosition = CodePosition(line: lineIndex, section: section, indicator: .opening)
-                    codeAnalyzer.add(codePosition: codePosition)
+                    let pos = CodePosition(lineContent: lineContent, line: lineIndex, section: section, indicator: .opening)
+                    codeAnalyzer.add(codePosition: pos)
                 case CodeBlockIndicator.closing.rawValue:
-                    let codePosition = CodePosition(line: lineIndex, section: section, indicator: .closing)
-                    codeAnalyzer.add(codePosition: codePosition)
+                    let pos = CodePosition(lineContent: lineContent, line: lineIndex, section: section, indicator: .closing)
+                    codeAnalyzer.add(codePosition: pos)
                 default:
                     break
                 }

@@ -20,7 +20,6 @@ extension LintLine {
     fileprivate func emptyLinesRequiredForCodeBlock(in content: [String]) -> [Int] {
         let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: content)
         
-        //Decide where to add and where to remove
         
         return [Int]()
     }

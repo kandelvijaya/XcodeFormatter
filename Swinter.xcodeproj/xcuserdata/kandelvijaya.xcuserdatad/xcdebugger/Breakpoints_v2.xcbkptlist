@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swinter/LintLine.swift"
-            timestampString = "495914878.472417"
+            timestampString = "495919344.600363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "emptyLinesRequiredForCodeBlock(in:)"
             landmarkType = "7">
          </BreakpointContent>

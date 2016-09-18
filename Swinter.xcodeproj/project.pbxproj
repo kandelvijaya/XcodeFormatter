@@ -35,6 +35,12 @@
 		85E19CCB1D8F07B900F11938 /* LintLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC81D8F024E00F11938 /* LintLine.swift */; };
 		85E19CCC1D8F07BE00F11938 /* CodeBlockAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */; };
 		85E19CCD1D8F07BE00F11938 /* CodeBlockAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */; };
+		85E19CCF1D8F1D3400F11938 /* CodeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */; };
+		85E19CD01D8F1D3900F11938 /* CodeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */; };
+		85E19CD11D8F1D3A00F11938 /* CodeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */; };
+		85E19CD31D8F1D6200F11938 /* CodePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CD21D8F1D6200F11938 /* CodePosition.swift */; };
+		85E19CD41D8F1D6B00F11938 /* CodePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CD21D8F1D6200F11938 /* CodePosition.swift */; };
+		85E19CD51D8F1D6B00F11938 /* CodePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CD21D8F1D6200F11938 /* CodePosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +99,8 @@
 		8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLintTests.swift; sourceTree = "<group>"; };
 		85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlockAnalyzer.swift; sourceTree = "<group>"; };
 		85E19CC81D8F024E00F11938 /* LintLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintLine.swift; sourceTree = "<group>"; };
+		85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlock.swift; sourceTree = "<group>"; };
+		85E19CD21D8F1D6200F11938 /* CodePosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodePosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */,
+				85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */,
+				85E19CD21D8F1D6200F11938 /* CodePosition.swift */,
 			);
 			name = CodeAnalyzer;
 			sourceTree = "<group>";
@@ -367,10 +377,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E19CCF1D8F1D3400F11938 /* CodeBlock.swift in Sources */,
 				8507ED331D8D8906003A7DEA /* Regexp.swift in Sources */,
 				85E19CC91D8F024E00F11938 /* LintLine.swift in Sources */,
 				8507ECF31D8B2631003A7DEA /* ViewController.swift in Sources */,
 				85E19CC51D8EF6EA00F11938 /* CodeBlockAnalyzer.swift in Sources */,
+				85E19CD31D8F1D6200F11938 /* CodePosition.swift in Sources */,
 				8507ED391D8E77AB003A7DEA /* LintFileComment.swift in Sources */,
 				8507ED0E1D8B2695003A7DEA /* LintSpace.swift in Sources */,
 				8507ECF11D8B2631003A7DEA /* AppDelegate.swift in Sources */,
@@ -386,6 +398,8 @@
 				8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */,
 				8507ED341D8D965B003A7DEA /* Regexp.swift in Sources */,
 				8507ED311D8C8198003A7DEA /* TrailingCurlyBracketTests.swift in Sources */,
+				85E19CD41D8F1D6B00F11938 /* CodePosition.swift in Sources */,
+				85E19CD01D8F1D3900F11938 /* CodeBlock.swift in Sources */,
 				8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */,
 				85E19CCD1D8F07BE00F11938 /* CodeBlockAnalyzer.swift in Sources */,
 				8507ED3D1D8ED9C3003A7DEA /* CommentLintTests.swift in Sources */,
@@ -398,10 +412,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E19CD11D8F1D3A00F11938 /* CodeBlock.swift in Sources */,
 				85E19CCC1D8F07BE00F11938 /* CodeBlockAnalyzer.swift in Sources */,
 				8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */,
 				8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */,
 				85E19CCA1D8F07B700F11938 /* LintLine.swift in Sources */,
+				85E19CD51D8F1D6B00F11938 /* CodePosition.swift in Sources */,
 				8507ED3A1D8E798B003A7DEA /* LintFileComment.swift in Sources */,
 				8507ED351D8D9663003A7DEA /* Regexp.swift in Sources */,
 				8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */,
