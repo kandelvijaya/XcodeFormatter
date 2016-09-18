@@ -21,9 +21,16 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         completionHandler(nil)
     }
     
+    //NOTE: App seems to crash when mutating the complete buffer directly.
     func ensureProperFileComment(invocation: XCSourceEditorCommandInvocation) {
-        let corrected = LintFileComment().correct(content: invocation.buffer.completeBuffer)
-        invocation.buffer.completeBuffer = corrected
+        let newFileCommentLines = LintFileComment().extractNewCommentLines(from: invocation.buffer.completeBuffer)
+        guard !newFileCommentLines.isEmpty else { return }
+        //There usually are 7 lines of default Xcode comment template.
+        (0..<7).forEach{ _ in invocation.buffer.lines.removeObject(at: 0) }
+        
+        for value in newFileCommentLines.reversed() {
+            invocation.buffer.lines.insert(value, at: 0)
+        }
     }
     
 }

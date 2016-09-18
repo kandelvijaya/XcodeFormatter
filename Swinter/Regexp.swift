@@ -22,11 +22,11 @@ struct MatchCorrection {
     
 }
 
-fileprivate struct Match {
+struct Match {
     let matches: [CaptureGroupMatchRange]
 }
 
-fileprivate struct CaptureGroupMatchRange {
+struct CaptureGroupMatchRange {
     let content: String
     let range: Range<String.Index>
 }
@@ -60,7 +60,7 @@ final class Regexp {
     }
     
     
-    static fileprivate func findAllMatches(in contentString: String, with regex: NSRegularExpression) -> [Match] {
+    static func findAllMatches(in contentString: String, with regex: NSRegularExpression) -> [Match] {
         var matches: [Match] = []
         
         regex.enumerateMatches(in: contentString, options: .reportCompletion, range: NSMakeRange(0, contentString.characters.count), using: { (textCheckingResult, flags, status) in
