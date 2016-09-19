@@ -124,11 +124,7 @@ extension SourceEditorCommand {
     //3. Ensure 1 empty line between functions
     //4. Ensure 1 empty line before and after //MARK:
     func ensureProperEmptyLines(invocation: XCSourceEditorCommandInvocation) {
-        guard let lines = invocation.buffer.lines.copy() as? [String] else {
-            return
-        }
-        
-        let emptyLineReuiredLineIndex = LintLine().emptyLineRequiredAtLinesFor(content: lines)
+        LintLine().ensureProperEmptyLines(for: invocation.buffer.lines)
     }
     
 }

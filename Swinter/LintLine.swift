@@ -17,41 +17,50 @@ final class LintLine {
 extension LintLine {
     
     //MARK: Required empty lines
-    fileprivate func emptyLinesRequiredForCodeBlock(in content: [String]) -> [Int] {
-        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: content)
+    fileprivate func ensureProperEmptyLines(in content: NSMutableArray) {
+        var offset = 0
+        var currentLineIndex = 0
         
-        let allPrimaryCodeBlocks = allCodeBlocks.filter{
+        let stringLines = content.reduce([String]()) {
+            $0 + [String(describing: $1)]
+        }
+        
+        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: stringLines)
+        
+        let allPrimaryCodeBlocksSpanningMultilpleLines = allCodeBlocks.filter{
             if let type = $0.type, type != CodeBlockType.OtherKind {
-                return true
+                return $0.start.line != $0.end.line
             }
             return false
         }
+        let primaries = allPrimaryCodeBlocksSpanningMultilpleLines
         
-        allPrimaryCodeBlocks.reduce([Int]()){
-            $0 + $1.lineIndexesOfEmptyLinesBeforeEnd(content: content)
+        let ascendingCodeBlockPosition = primaries.map({ return [$0.start, $0.end] }).flatMap({$0})
+                                        .sorted { (cp1, cp2) -> Bool in
+            return cp1.line < cp2.line
         }
         
         
+        ascendingCodeBlockPosition.forEach {
+            currentLineIndex = $0.line + offset
+            
+            //UP
+        }
         
-        return [Int]()
     }
     
-    fileprivate func emptyLinesRequiredForEOF(in content: [String]) -> [Int] {
-        
-        
-        return []
+    fileprivate enum Direction {
+        case up
+        case down
     }
     
-    //MARK: Not required empty lines
-    fileprivate func emptyLinesNotRequiredForCodeBlock(in content: [String]) -> [Int] {
-        
-        return []
+    fileprivate func indicesWithEmptyLine(at: Direction, fromLineIndex: Int, forLines: NSMutableArray) -> [Int] {
+        switch at {
+        case up:
+            
+        case down:
+            
+        }
     }
-    
-    fileprivate func emptyLinesNotRequiredForEOF(in content: [String]) -> [Int] {
-        
-        
-        return []
-    }
-    
+
 }
