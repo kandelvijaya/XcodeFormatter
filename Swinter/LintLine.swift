@@ -7,15 +7,18 @@ import Foundation
 final class LintLine {
     
     func ensureProperEmptyLines(in content: NSMutableArray) {
+        let codePositions = orderedCodeBlockPosition(for: content)
+        let corrector = EmptyLineCorrection(mutableContent: content, ascendingOrdered: codePositions)
+        corrector.correct()         //The magical mutator
+    }
+    
+    fileprivate func orderedCodeBlockPosition(for content: NSMutableArray) -> [CodePosition] {
+        
         let stringLines = content.reduce([String]()) {
             $0 + [String(describing: $1)]
         }
-        let codePositions = orderedCodeBlockPosition(at: stringLines)
-        EmptyLineCorrection(mutableContent: content, codePositions: codePositions).correct()
-    }
-    
-    fileprivate func orderedCodeBlockPosition(at content: [String]) -> [CodePosition] {
-        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: content)
+        
+        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: stringLines)
         
         let allPrimaryCodeBlocksSpanningMultilpleLines = allCodeBlocks.filter{
             if let type = $0.type, type != CodeBlockType.OtherKind {
@@ -25,7 +28,10 @@ final class LintLine {
         }
         let primaries = allPrimaryCodeBlocksSpanningMultilpleLines
         
-        let ascendingCodeBlockPosition = primaries.map({ return [$0.start, $0.end] }).flatMap({$0})
+        //Each codeblock has start and end Position
+        //EmptyLineCorrection expects [codePosition] as a ascending ordered
+        let ascendingCodeBlockPosition = primaries.map({ [$0.start, $0.end] })
+            .flatMap({$0})
             .sorted { (cp1, cp2) -> Bool in
                 return cp1.line < cp2.line
         }

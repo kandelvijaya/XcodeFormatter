@@ -15,7 +15,12 @@ class EmptyLineCorrection {
         case up, down
     }
     
-    init(mutableContent: NSMutableArray, codePositions: [CodePosition]) {
+    /// Provide a MutableArray of String lines and importantly
+    /// Ascending Ordered CodePosition.
+    ///
+    ///NOTE: Providing wrong order results in incorrect and undesired
+    // code correction which is doomed to be wrong at all times.
+    init(mutableContent: NSMutableArray, ascendingOrdered codePositions: [CodePosition]) {
         self.mutableContent = mutableContent
         self.codePositions = codePositions
     }
@@ -27,9 +32,16 @@ class EmptyLineCorrection {
         }
     }
     
+    //TODO: Refactor these 2 algorithms into a simplified model
     private func correctEmptySpaceAbove(position: CodePosition) {
         var currentSearchLineIndex = correctedLineIndex(for: position) - 1       //looking upwards
         var indicesOfEmptyLines = [Int]()
+        
+        //When the code block starts the file.
+        guard currentSearchLineIndex > 0 else {
+            addEmptySpace(at: 0)
+            return
+        }
         
         while ((mutableContent[currentSearchLineIndex] as! String) == "\n") {
             indicesOfEmptyLines.append(currentSearchLineIndex)
@@ -67,7 +79,8 @@ class EmptyLineCorrection {
             return
         } else {
             removeAllEmptySpace(atIndices: indicesOfEmptyLines)
-            addEmptySpace(at: correctedLineIndex(for: position) + 1)
+            //using correctedPosition is wrong here
+            addEmptySpace(at: indicesOfEmptyLines[0])
         }
     }
     

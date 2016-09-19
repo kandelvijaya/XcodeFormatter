@@ -122,7 +122,17 @@ extension SourceEditorCommand {
     //          Protocol | enum | struct | class
     //2. Ensure 1 empty line at the EOF
     //3. Ensure 1 empty line between functions
-    //4. Ensure 1 empty line before and after //MARK:
+    //4. Ensure 1 empty line before and after
+    //
+    // NOTE: Mutation was preferred over to immutability assignment
+    //       due to the fact that app crashed randomly when doing so
+    //
+    //      invocation.buffer.lines.removeAll()
+    //      correctedLines.forEach {
+    //          invocation.buffer.lines.add($0)
+    //      }
+    //
+    //
     func ensureProperEmptyLines(invocation: XCSourceEditorCommandInvocation) {
         LintLine().ensureProperEmptyLines(in: invocation.buffer.lines)
     }
