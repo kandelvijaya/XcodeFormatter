@@ -5,27 +5,17 @@
 import Foundation
 
 final class LintLine {
-
-    func emptyLineRequiredAtLinesFor(content: [String]) -> [Int] {
-        return emptyLinesRequiredForCodeBlock(in: content)
-    }
     
-}
-
-//MARK:- Private methods
-
-extension LintLine {
-    
-    //MARK: Required empty lines
-    fileprivate func ensureProperEmptyLines(in content: NSMutableArray) {
-        var offset = 0
-        var currentLineIndex = 0
-        
+    func ensureProperEmptyLines(in content: NSMutableArray) {
         let stringLines = content.reduce([String]()) {
             $0 + [String(describing: $1)]
         }
-        
-        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: stringLines)
+        let codePositions = orderedCodeBlockPosition(at: stringLines)
+        EmptyLineCorrection(mutableContent: content, codePositions: codePositions).correct()
+    }
+    
+    fileprivate func orderedCodeBlockPosition(at content: [String]) -> [CodePosition] {
+        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: content)
         
         let allPrimaryCodeBlocksSpanningMultilpleLines = allCodeBlocks.filter{
             if let type = $0.type, type != CodeBlockType.OtherKind {
@@ -36,31 +26,11 @@ extension LintLine {
         let primaries = allPrimaryCodeBlocksSpanningMultilpleLines
         
         let ascendingCodeBlockPosition = primaries.map({ return [$0.start, $0.end] }).flatMap({$0})
-                                        .sorted { (cp1, cp2) -> Bool in
-            return cp1.line < cp2.line
+            .sorted { (cp1, cp2) -> Bool in
+                return cp1.line < cp2.line
         }
         
-        
-        ascendingCodeBlockPosition.forEach {
-            currentLineIndex = $0.line + offset
-            
-            //UP
-        }
-        
+        return ascendingCodeBlockPosition
     }
     
-    fileprivate enum Direction {
-        case up
-        case down
-    }
-    
-    fileprivate func indicesWithEmptyLine(at: Direction, fromLineIndex: Int, forLines: NSMutableArray) -> [Int] {
-        switch at {
-        case up:
-            
-        case down:
-            
-        }
-    }
-
 }
