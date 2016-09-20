@@ -38,14 +38,19 @@ class EmptyLineCorrection {
         var indicesOfEmptyLines = [Int]()
         
         //When the code block starts the file.
-        guard currentSearchLineIndex > 0 else {
+        if currentSearchLineIndex < 0 {
             addEmptySpace(at: 0)
             return
         }
         
         while isEmpty(line: mutableContent[currentSearchLineIndex] as! String) {
             indicesOfEmptyLines.append(currentSearchLineIndex)
-            currentSearchLineIndex -= 1
+            
+            if currentSearchLineIndex == 0 {
+                break
+            } else {
+                currentSearchLineIndex -= 1
+            }
         }
         
         if indicesOfEmptyLines.count == 0 {

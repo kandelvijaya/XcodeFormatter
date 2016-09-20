@@ -44,6 +44,7 @@
 		85E19CD71D90716200F11938 /* EmptyLineCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */; };
 		85E19CD81D90717C00F11938 /* EmptyLineCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */; };
 		85E19CD91D90717D00F11938 /* EmptyLineCorrection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */; };
+		85E19CDD1D91CB5200F11938 /* EmptyLineInsertionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CDC1D91CB5200F11938 /* EmptyLineInsertionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlock.swift; sourceTree = "<group>"; };
 		85E19CD21D8F1D6200F11938 /* CodePosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodePosition.swift; sourceTree = "<group>"; };
 		85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLineCorrection.swift; sourceTree = "<group>"; };
+		85E19CDC1D91CB5200F11938 /* EmptyLineInsertionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyLineInsertionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				85E19CDC1D91CB5200F11938 /* EmptyLineInsertionTests.swift */,
 				8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */,
 				8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */,
 				2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */,
@@ -408,6 +411,7 @@
 				85E19CD41D8F1D6B00F11938 /* CodePosition.swift in Sources */,
 				85E19CD01D8F1D3900F11938 /* CodeBlock.swift in Sources */,
 				8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */,
+				85E19CDD1D91CB5200F11938 /* EmptyLineInsertionTests.swift in Sources */,
 				85E19CCD1D8F07BE00F11938 /* CodeBlockAnalyzer.swift in Sources */,
 				8507ED3D1D8ED9C3003A7DEA /* CommentLintTests.swift in Sources */,
 				2857BC161D8BF1B800E22971 /* ReturnArrowSpacerTests.swift in Sources */,
