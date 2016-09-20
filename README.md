@@ -37,18 +37,37 @@ Xcode Swift Coding Guidelines Linter.
   * `class A{` -> `class A {`
   * `x.map{--}.filter{--}` -> `x.map {--}. {--}`
   * `else{` -> `else {`
-7. Auto Format Comment at the begining of the file
+7. Auto Format Comment at the begining of the file (Only If the Default XCode generated exists.)
+8. Insert empty line
+  * empty line before and after Type creation
+  * empty line before and after the ending } of that type
+
+  ```//
+     //  CommentLintTests.swift
+     //  Copyright © 2016 SomeCompany. All rights reserved.
+     //
+     
+     import Foundation
+
+     final class EmptyLineCorrection {
+
+          private var currentLineIndex = 0
+
+          private enum Direction {
+
+               case up, down
+
+          }
+     
+     }
+     
+     ```
+
+
 
 ## In progress
-1. Insert empty line at just after a Type declaration and just before the completion
-  *. Like so
-       `class A { 
-       
-       private let x = 10
-
-       doAllYourStuffs() ...
-       
-       }`
 
 
 ## TODO
+1. Performance of the whole linting/correcting process
+2. Refactoring Add empty lines before/after 
