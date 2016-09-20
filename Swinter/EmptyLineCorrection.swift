@@ -43,7 +43,7 @@ class EmptyLineCorrection {
             return
         }
         
-        while ((mutableContent[currentSearchLineIndex] as! String) == "\n") {
+        while isEmpty(line: mutableContent[currentSearchLineIndex] as! String) {
             indicesOfEmptyLines.append(currentSearchLineIndex)
             currentSearchLineIndex -= 1
         }
@@ -60,7 +60,7 @@ class EmptyLineCorrection {
     
     private func correctEmptySpaceBelow(position: CodePosition) {
         var currentSearchLineIndex = correctedLineIndex(for: position) + 1       //looking downwards
-        var indicesOfEmptyLines = [Int]()
+        var indicesOfEmptyLines = [Int]()           //Weired calculation of 14 billion indexes
         
         //When there is no EOF empty line then add one and return
         guard currentSearchLineIndex < mutableContent.count else {
@@ -68,9 +68,13 @@ class EmptyLineCorrection {
             return
         }
         
-        while ((mutableContent[currentSearchLineIndex] as! String) == "\n") {
+        while isEmpty(line: mutableContent[currentSearchLineIndex] as! String) { //TODO: match for whitespace []*\n$
             indicesOfEmptyLines.append(currentSearchLineIndex)
-            currentSearchLineIndex += 1
+            if currentSearchLineIndex == mutableContent.count - 1 {
+                break
+            } else {
+                currentSearchLineIndex += 1
+            }
         }
         
         if indicesOfEmptyLines.count == 0 {
@@ -95,7 +99,13 @@ class EmptyLineCorrection {
     
     private func removeAllEmptySpace(atIndices indices: [Int]) {
         offset += -indices.count
-        indices.forEach { mutableContent.removeObject(at: $0) }
+        //Removing indices.first or every index is a error index out of bound.
+        indices.forEach { _ in mutableContent.removeObject(at: indices.min()! ) }
+    }
+    
+    private func isEmpty(line: String) -> Bool {
+        let trimmedLine = line.trimmingCharacters(in: CharacterSet(charactersIn: " "))
+        return trimmedLine == "\n"
     }
     
 }
