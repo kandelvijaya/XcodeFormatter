@@ -15,25 +15,6 @@ final class CodeBlockAnalyzer {
     
     public private(set) var identifiedCodeBlocks = [CodeBlock]()
     
-    func add(codePosition: CodePosition) {
-        guard !toBeAnalysedCodePosition.isEmpty else {
-            toBeAnalysedCodePosition.append(codePosition)
-            return
-        }
-        
-        guard let lastCodePosition = toBeAnalysedCodePosition.last else {
-            return
-        }
-        
-        if CodePosition.arePair(openingPosition: lastCodePosition, endingPosition: codePosition) {
-            let codeBlock = CodeBlock(startPosition: lastCodePosition, endPosition: codePosition)
-            identifiedCodeBlocks.append(codeBlock)
-            toBeAnalysedCodePosition.removeLast()
-        } else {
-            toBeAnalysedCodePosition.append(codePosition)
-        }
-    }
-    
     func codeBlocks(for content: [String]) -> [CodeBlock] {
         let codeAnalyzer = CodeBlockAnalyzer()
         for (lineIndex, lineContent) in content.enumerated() {
@@ -54,6 +35,25 @@ final class CodeBlockAnalyzer {
         }
         
         return codeAnalyzer.identifiedCodeBlocks
+    }
+    
+    private func add(codePosition: CodePosition) {
+        guard !toBeAnalysedCodePosition.isEmpty else {
+            toBeAnalysedCodePosition.append(codePosition)
+            return
+        }
+        
+        guard let lastCodePosition = toBeAnalysedCodePosition.last else {
+            return
+        }
+        
+        if CodePosition.arePair(openingPosition: lastCodePosition, endingPosition: codePosition) {
+            let codeBlock = CodeBlock(startPosition: lastCodePosition, endPosition: codePosition)
+            identifiedCodeBlocks.append(codeBlock)
+            toBeAnalysedCodePosition.removeLast()
+        } else {
+            toBeAnalysedCodePosition.append(codePosition)
+        }
     }
     
 }
