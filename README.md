@@ -63,11 +63,23 @@ Xcode Swift Coding Guidelines Linter.
      
      ```
 
+## Using and Customization
 
+1 Feel free to build and run for yourself.
+2 If you want to customize how the autocorrector works then `LintSpace`, `LintLine`, `LineFileComment` are the places you should be heading.
+  * All these files have a regex pattern and requires a dictionary of `[LineIndex: ReplaceString]` as `rules`. Thats it! 
+  * For example: to format in such way `[Int : String]`, change the dictionary rule at `LintSpace` with `[1: " ", 3: " "]` where 1 and 3 are capture groups of the regex.
+
+## Contributing
+1. Ensure to write Unit Tests for every single public API that you write. Beware of edge cases. 
+2. Dont test private methods.
+3. Its usually better to start by reading Unit Tests for specific area before actually doing something. Unit Tests are `the` documentation.
 
 ## In progress
-
+1. Performance Testing and Instrumentation
+2. Sub-commands for Xcode to pick individual lint items
+3. Adding support to have empty before and after each `//MARK:` annoataion
 
 ## TODO
 1. Performance of the whole linting/correcting process
-2. Refactoring Add empty lines before/after 
+2. Refactoring of rutines that add empty lines before/after 
