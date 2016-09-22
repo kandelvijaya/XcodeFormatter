@@ -188,7 +188,6 @@
 				85E19CC81D8F024E00F11938 /* LintLine.swift */,
 				8507ED0D1D8B2695003A7DEA /* LintSpace.swift */,
 				8507ED381D8E77AB003A7DEA /* LintFileComment.swift */,
-				85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */,
 				85E19CC71D8F016500F11938 /* Regex */,
 				85E19CC61D8F015300F11938 /* CodeAnalyzer */,
 			);
@@ -240,6 +239,7 @@
 				85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */,
 				85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */,
 				85E19CD21D8F1D6200F11938 /* CodePosition.swift */,
+				85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */,
 			);
 			name = CodeAnalyzer;
 			sourceTree = "<group>";

@@ -27,38 +27,6 @@
             endingLineNumber = "67"
             landmarkName = "correctEmptySpaceBelow(position:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Swinter.EmptyLineCorrection.(correctEmptySpaceBelow in _00CB0CC207D07757B6705035CAFA79B4) (position : Swinter.CodePosition) -&gt; ()"
-                  moduleName = "Swinter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/EmptyLineCorrection.swift"
-                  timestampString = "496131893.087891"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "69">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwinterTests.EmptyLineCorrection.(correctEmptySpaceBelow in _2B58618C276DC73E0BD336A54E3C9D9F) (position : SwinterTests.CodePosition) -&gt; ()"
-                  moduleName = "SwinterTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/EmptyLineCorrection.swift"
-                  timestampString = "496131893.183871"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "69">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -75,38 +43,22 @@
             endingLineNumber = "112"
             landmarkName = "isEmpty(line:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Swinter.EmptyLineCorrection.(isEmpty in _00CB0CC207D07757B6705035CAFA79B4) (line : Swift.String) -&gt; Swift.Bool"
-                  moduleName = "Swinter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/EmptyLineCorrection.swift"
-                  timestampString = "496131893.094755"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwinterTests.EmptyLineCorrection.(isEmpty in _2B58618C276DC73E0BD336A54E3C9D9F) (line : Swift.String) -&gt; Swift.Bool"
-                  moduleName = "SwinterTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kandelvijaya/Desktop/Projects/Swinter/Swinter/EmptyLineCorrection.swift"
-                  timestampString = "496131893.18966"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftyLinter/SourceEditorCommand.swift"
+            timestampString = "496181804.038805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "perform(with:completionHandler:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
