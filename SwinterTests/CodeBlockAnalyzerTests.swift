@@ -145,5 +145,12 @@ class CodeBlockAnalyzerTests: XCTestCase {
         XCTAssert(enumCodeBlock.type! == CodeBlockType.EnumKind)
         
     }
+
+    func testThat_ProtocolConformingToClass_IsIdentified() {
+        let input = ["protocol A: class {\n", " }\n"]
+        let output = CodeBlockAnalyzer().codeBlocks(for: input)
+
+        XCTAssert(output[0].type! == CodeBlockType.ProtocolKind)
+    }
     
 }

@@ -11,11 +11,12 @@ enum CodeBlockType: String {
     case StructKind = "struct"
     case EnumKind = "enum"
     case ExtensionKind  = "extension"
+    case FunctionKind = "func"
     case OtherKind = ""     //NOTSET
     
     static func primaryTypesStringRepresentation() -> [String] {
         return [CodeBlockType.ProtocolKind.rawValue, CodeBlockType.ClassKind.rawValue, CodeBlockType.StructKind.rawValue,
-                CodeBlockType.EnumKind.rawValue, CodeBlockType.ExtensionKind.rawValue]
+                CodeBlockType.EnumKind.rawValue, CodeBlockType.FunctionKind.rawValue, CodeBlockType.ExtensionKind.rawValue]
     }
     
 }
@@ -76,10 +77,20 @@ struct CodeBlock {
         let includedTypeRep = CodeBlockType.primaryTypesStringRepresentation().filter{
             //In all case Type are followed with Space.
             // sometimes there might be .class
-            //TODO: Performance checking and/or replacing with Regex
             typeInfoLine.contains($0 + " ") && !typeInfoLine.contains("."+$0)
         }
-        assert(includedTypeRep.count <= 1)
+
+        //NOTE: This is a intermediate fix to allow statements such as
+        ///NOTE: class func dosomething() { }
+        ///NOTE: protocol A: class { }
+        let intermediate = includedTypeRep.reduce(""){ $0 + $1}
+        if intermediate == "class"+"func" {
+            return CodeBlockType.FunctionKind
+        }
+        if intermediate == "protocol"+"class" {
+            return CodeBlockType.ProtocolKind
+        }
+
         if let foundTypeRep = includedTypeRep.first {
             return CodeBlockType(rawValue: foundTypeRep)!
         } else {

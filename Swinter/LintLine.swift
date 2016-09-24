@@ -21,7 +21,7 @@ final class LintLine {
         let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: stringLines)
         
         let allPrimaryCodeBlocksSpanningMultilpleLines = allCodeBlocks.filter{
-            if let type = $0.type, type != CodeBlockType.OtherKind {
+            if let type = $0.type, type != CodeBlockType.OtherKind, type != CodeBlockType.FunctionKind {
                 return $0.start.line != $0.end.line
             }
             return false

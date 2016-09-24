@@ -14,7 +14,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         
         //TODO: Switch between command names and forward to the right method
-        markClassFinalUnlessOpenSpecified(invocation: invocation)
+        //markClassFinalUnlessOpenSpecified(invocation: invocation)
         ensureProperSpacing(invocation: invocation)
         ensureProperFileComment(invocation: invocation)
         ensureProperEmptyLines(invocation: invocation)

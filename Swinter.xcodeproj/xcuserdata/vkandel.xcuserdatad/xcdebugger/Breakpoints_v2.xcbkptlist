@@ -9,44 +9,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Swinter/LintSpace.swift"
-            timestampString = "495711289.450689"
+            filePath = "Swinter/LintLine.swift"
+            timestampString = "496416157.149185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "correctFunctionReturnArrow(line:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "orderedCodeBlockPosition(for:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Swinter.LintSpace.correctFunctionReturnArrow (line : Swift.String) -&gt; Swift.String"
-                  moduleName = "Swinter"
+                  symbolName = "SwiftyLinter.LintLine.(orderedCodeBlockPosition in _72C4223C82DDAFAEC35C3F6387E1555B) (for : __ObjC.NSMutableArray) -&gt; Swift.Array&lt;SwiftyLinter.CodePosition&gt;"
+                  moduleName = "SwiftyLinter"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vkandel/Projects/Swinter/Swinter/LintSpace.swift"
-                  timestampString = "495711313.192496"
+                  urlString = "file:///Users/vkandel/Projects/Swinter/Swinter/LintLine.swift"
+                  timestampString = "496416157.157477"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "403">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwinterTests.LintSpace.correctFunctionReturnArrow (line : Swift.String) -&gt; Swift.String"
-                  moduleName = "SwinterTests"
+                  symbolName = "SwiftyLinter.LintLine.((orderedCodeBlockPosition in _72C4223C82DDAFAEC35C3F6387E1555B) (for : __ObjC.NSMutableArray) -&gt; Swift.Array&lt;SwiftyLinter.CodePosition&gt;).(closure #2)"
+                  moduleName = "SwiftyLinter"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vkandel/Projects/Swinter/Swinter/LintSpace.swift"
-                  timestampString = "495711313.263953"
+                  urlString = "file:///Users/vkandel/Projects/Swinter/Swinter/LintLine.swift"
+                  timestampString = "496416157.15939"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "134">
                </Location>
             </Locations>
          </BreakpointContent>

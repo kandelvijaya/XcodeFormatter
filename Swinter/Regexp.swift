@@ -9,7 +9,6 @@
 import Foundation
 
 struct MatchCorrection {
-    
     let regex: NSRegularExpression
     let line: String
     let rules: MatchCorrectionRule      //correction rule
@@ -19,7 +18,6 @@ struct MatchCorrection {
         self.line = line
         self.rules = rules
     }
-    
 }
 
 struct Match {
@@ -86,6 +84,7 @@ final class Regexp {
 }
 
 extension NSRange {
+    //More effiecent version required
     
     func toRange(forString: String) -> Range<String.Index> {
         let lowerIndex = forString.index(forString.startIndex, offsetBy: location)
