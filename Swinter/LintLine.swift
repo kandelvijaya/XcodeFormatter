@@ -14,14 +14,14 @@ final class LintLine {
     
     fileprivate func orderedCodeBlockPosition(for content: NSMutableArray) -> [CodePosition] {
         
-        let stringLines = content.reduce([String]()) {
+        let codeLines = content.reduce([String]()) {
             $0 + [String(describing: $1)]
         }
         
-        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: stringLines)
+        let allCodeBlocks = CodeBlockAnalyzer().codeBlocks(for: codeLines)
         
         let allPrimaryCodeBlocksSpanningMultilpleLines = allCodeBlocks.filter{
-            if let type = $0.type, type != CodeBlockType.OtherKind, type != CodeBlockType.FunctionKind {
+            if let thisType = $0.type, CodeBlockType.primaries.contains(thisType) {
                 return $0.start.line != $0.end.line
             }
             return false
