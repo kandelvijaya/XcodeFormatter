@@ -11,7 +11,14 @@ final class LintLine {
         let corrector = EmptyLineCorrection(mutableContent: content, ascendingOrdered: codePositions)
         corrector.correct()         //The magical mutator
     }
-    
+
+
+    /// returns a array of CodePosition ordered top to bottom
+    ///
+    /// - parameter content: NSMutableArray of string where each index
+    ///   representes a lineContent
+    ///
+    /// - returns: [CodePosition]
     fileprivate func orderedCodeBlockPosition(for content: NSMutableArray) -> [CodePosition] {
         
         let codeLines = content.reduce([String]()) {

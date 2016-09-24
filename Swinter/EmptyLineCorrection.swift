@@ -14,12 +14,14 @@ class EmptyLineCorrection {
     private enum Direction {
         case up, down
     }
-    
-    /// Provide a MutableArray of String lines and importantly
-    /// Ascending Ordered CodePosition.
+
+    /// Create a EmptyLineCorrection Object that can correct empty lines
     ///
-    ///NOTE: Providing wrong order results in incorrect and undesired
-    // code correction which is doomed to be wrong at all times.
+    /// - parameter mutableContent: Array of strings
+    /// - parameter codePositions:  Ordered array of CodePosition
+    ///
+    /// NOTE: Providing wrong order results in incorrect and undesired
+    /// code correction which is doomed to be wrong at all times.
     init(mutableContent: NSMutableArray, ascendingOrdered codePositions: [CodePosition]) {
         self.mutableContent = mutableContent
         self.codePositions = codePositions

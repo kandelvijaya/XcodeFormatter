@@ -18,11 +18,12 @@ final class CodeBlockAnalyzer {
     func codeBlocks(for content: [String]) -> [CodeBlock] {
         for (lineIndex, lineContent) in content.enumerated() {
 
-//            //early exit
-//            if !lineContent.contains(CodeBlockIndicator.opening.rawValue) && !lineContent.contains(CodeBlockIndicator.closing.rawValue) {
-//                continue
-//            }
+            //Early Exit
+            if !lineContent.contains(CodeBlockIndicator.opening.rawValue) && !lineContent.contains(CodeBlockIndicator.closing.rawValue) {
+                continue
+            }
 
+            //TODO: this method takes a lot of CPU cycles. Find a alternative.
             for (section, char) in lineContent.characters.enumerated() {
                 switch String(char) {
                 case CodeBlockIndicator.opening.rawValue:

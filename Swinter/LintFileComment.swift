@@ -15,8 +15,9 @@ final class LintFileComment {
         let commentMatches = Regexp.findAllMatches(in: content, with: regex)
     
         guard var firstMatches = commentMatches.first?.matches else { return [] }
-        firstMatches.removeFirst()      //0 -> gives whole comment which matched
-        return firstMatches.reduce([String]()){  $0 + [$1.content] }
+        //0 -> gives whole comment which matched
+        firstMatches.removeFirst()
+        return firstMatches.reduce( [String]() ){  $0 + [$1.content] }
     }
     
 }
