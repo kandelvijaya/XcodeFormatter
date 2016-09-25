@@ -17,6 +17,11 @@ enum CodeBlockType: String {
     static var primaries: [CodeBlockType] {
         return [.ProtocolKind, .ClassKind, .StructKind, .EnumKind, .ExtensionKind]
     }
+
+    //Other is not part of all
+    static var all: [CodeBlockType] {
+        return primaries + [.FunctionKind]
+    }
     
 }
 
@@ -54,7 +59,7 @@ struct CodeBlock {
 
         //In all case, Type are followed with Space.
         //exclude lines like these `X.map{ $0.class }.forEach{` although there is a class keyword
-        let includedTypeRep = CodeBlockType.primaries.map{ $0.rawValue }.filter{
+        let includedTypeRep = CodeBlockType.all.map{ $0.rawValue }.filter{
             typeInfoLine.contains($0 + " ") && !typeInfoLine.contains("."+$0)
         }
 

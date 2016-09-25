@@ -64,7 +64,7 @@ class CodeBlockAnalyzerTests: XCTestCase {
         XCTAssertEqual(output.type, CodeBlockType.ProtocolKind)
     }
     
-    func testThat_FunctionDeclaration_HasTypeOfOther() {
+    func testThat_FunctionDeclaration_HasTypeOfFunctionKind() {
         let input = ["func do(){\n","}\n"]
         
         guard let output = CodeBlockAnalyzer().codeBlocks(for: input).first else {
@@ -72,7 +72,7 @@ class CodeBlockAnalyzerTests: XCTestCase {
             return
         }
         
-        XCTAssert(output.type == CodeBlockType.OtherKind)
+        XCTAssert(output.type == CodeBlockType.FunctionKind)
     }
     
     func testThat_IfElseBlock_HasTypeOfOther() {

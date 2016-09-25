@@ -4,33 +4,54 @@
 
 import Foundation
 
+enum CodeDirection {
+    case down, up, both
+}
+
 class EmptyLineCorrection {
-    
+
+    typealias CodePositonToCorrect = (CodePosition, CodeDirection)
+
     private let mutableContent: NSMutableArray
-    private let codePositions: [CodePosition]
+    private var codePositionsToCorrect: [CodePositonToCorrect] = []
     private var offset = 0
     private var currentLineIndex = 0
-    
-    private enum Direction {
-        case up, down
-    }
 
     /// Create a EmptyLineCorrection Object that can correct empty lines
     ///
     /// - parameter mutableContent: Array of strings
-    /// - parameter codePositions:  Ordered array of CodePosition
-    ///
-    /// NOTE: Providing wrong order results in incorrect and undesired
-    /// code correction which is doomed to be wrong at all times.
-    init(mutableContent: NSMutableArray, ascendingOrdered codePositions: [CodePosition]) {
+    init(mutableContent: NSMutableArray) {
         self.mutableContent = mutableContent
-        self.codePositions = codePositions
     }
-    
+
+    /// Add code positions where empty lines should be added or removed
+    /// depending on the direction parameter that is passed. Provided
+    /// codePositos will be sorted in ascending order before correction.
+    /// Calling this method multiple times will add the unique values 
+    /// and apply the correction. 
+    /// NOTE: 2 code positions with same lineIndex but different section/column
+    /// values will not add/remove 2 lines. It just adds the work.
+    ///
+    /// - parameter codePositons: [CodePosition]
+    /// - parameter direction:    CodeDirection. which direction to correct.
+    func add(codePositons: [CodePosition], withDirectionToCorrect direction: CodeDirection) {
+        let newPosition = codePositons.map{ ($0, direction) }
+        codePositionsToCorrect.append(contentsOf: newPosition)
+    }
+
     func correct() {
-        codePositions.forEach { position in
-            correctEmptySpaceAbove(position: position)
-            correctEmptySpaceBelow(position: position)
+        codePositionsToCorrect.sorted { (cp1, cp2) -> Bool in
+                return cp1.0.line < cp2.0.line
+        }
+        .forEach { pos in
+            if pos.1 == .both {
+                correctEmptySpaceAbove(position: pos.0)
+                correctEmptySpaceBelow(position: pos.0)
+            } else if pos.1 == .up {
+                correctEmptySpaceAbove(position: pos.0)
+            } else if pos.1 == .down {
+                correctEmptySpaceAbove(position: pos.0)
+            }
         }
     }
     
