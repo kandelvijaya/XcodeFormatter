@@ -153,4 +153,16 @@ class CodeBlockAnalyzerTests: XCTestCase {
         XCTAssert(output[0].type! == CodeBlockType.ProtocolKind)
     }
     
+    func testPerformanceOfCodeBlockAnalyzer() {
+        let singleItem = ["struct A {\n", "enum Type{\n", "case .a, .b\n", "}\n", "}\n", "\n"]
+        let inputCode = (0..<1000).map{_ in singleItem }.reduce([String]()) { $0 + $1 }
+        
+        self.measure {
+            let output = CodeBlockAnalyzer().codeBlocks(for: inputCode)
+            XCTAssert(output.count == 2000)
+        }
+        
+        
+    }
+    
 }
