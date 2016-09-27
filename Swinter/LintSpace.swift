@@ -8,49 +8,42 @@
 
 import Foundation
 
-typealias MatchCorrectionRule = [Int: String]
-
-/// Try it on www.regex101.com
-enum MatchPattern: String {
-    case colon = "[\\S]([ ]*)(:)([ ]*)(?=[\\S])"
-    case comma = "[\\S]([ ]*)(,)([ ]*)(?=[\\S])"
-    case functionReturnArrow = "[\\S]([ ]*)(->)([ ]*)(?=[\\S])"
-    case trailingCurlyBracket = "([^ \\.\\(\\[])([ ]*)\\{$"
-    
-    var regex: NSRegularExpression? {
-        return NSRegularExpression.regexFrom(pattern: self.rawValue)
-    }
-    
-}
-
 final class LintSpace {
     
+    // For performance reasons they are static let. 
+    private struct Constants {
+        static let colonRegex = MatchPattern.colon.regex
+        static let commaRegex = MatchPattern.comma.regex
+        static let functionReturnArrowRegex = MatchPattern.functionReturnArrow.regex
+        static let trailingCurlyBracketRegex = MatchPattern.trailingCurlyBracket.regex
+    }
+    
     func correctColonSpace(line: String) -> String {
-        guard let regex = MatchPattern.colon.regex else { return line }
+        guard let regex = Constants.colonRegex else { return line }
         guard line.contains(":") else { return line }
-        let matchCorrection = MatchCorrection(regex: regex, forString: line, correctionRules: [1: "", 3: " "])
-        return Regexp.correctMatches(with: matchCorrection)
+        let correctionInfo = MatchCorrectionInfo(regex: regex, forString: line, correctionRules: [1: "", 3: " "])
+        return MatchCorrector.correct(with: correctionInfo)
     }
     
     func correctCommaSeparation(line: String) -> String {
-        guard let regex = MatchPattern.comma.regex else { return line }
+        guard let regex = Constants.commaRegex else { return line }
         guard line.contains(",") else { return line }
-        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [1: "", 3: " "] )
-        return Regexp.correctMatches(with: matchCorrection)
+        let correctionInfo = MatchCorrectionInfo(regex:regex, forString: line, correctionRules: [1: "", 3: " "] )
+        return MatchCorrector.correct(with: correctionInfo)
     }
     
     func correctFunctionReturnArrow(line: String) -> String {
-        guard let regex = MatchPattern.functionReturnArrow.regex else { return line }
+        guard let regex = Constants.functionReturnArrowRegex else { return line }
         guard line.contains("->") else { return line }
-        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [1: " ", 3: " "] )
-        return Regexp.correctMatches(with: matchCorrection)
+        let correctionInfo = MatchCorrectionInfo(regex:regex, forString: line, correctionRules: [1: " ", 3: " "] )
+        return MatchCorrector.correct(with: correctionInfo)
     }
     
     func correctTrailingCurlyBracket(line: String) -> String {
-        guard let regex = MatchPattern.trailingCurlyBracket.regex else { return line }
+        guard let regex = Constants.trailingCurlyBracketRegex else { return line }
         guard line.contains("{") else { return line }
-        let matchCorrection = MatchCorrection(regex:regex, forString: line, correctionRules: [2: " "] )
-        return Regexp.correctMatches(with: matchCorrection)
+        let correctionInfo = MatchCorrectionInfo(regex:regex, forString: line, correctionRules: [2: " "] )
+        return MatchCorrector.correct(with: correctionInfo)
     }
 
 }

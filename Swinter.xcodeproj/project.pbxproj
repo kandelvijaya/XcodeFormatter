@@ -23,13 +23,22 @@
 		8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 		8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */; };
 		8507ED311D8C8198003A7DEA /* TrailingCurlyBracketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */; };
-		8507ED331D8D8906003A7DEA /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* Regexp.swift */; };
-		8507ED341D8D965B003A7DEA /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* Regexp.swift */; };
-		8507ED351D8D9663003A7DEA /* Regexp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* Regexp.swift */; };
+		8507ED331D8D8906003A7DEA /* MatchCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* MatchCorrector.swift */; };
+		8507ED341D8D965B003A7DEA /* MatchCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* MatchCorrector.swift */; };
+		8507ED351D8D9663003A7DEA /* MatchCorrector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED321D8D8906003A7DEA /* MatchCorrector.swift */; };
 		8507ED391D8E77AB003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
 		8507ED3A1D8E798B003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
 		8507ED3B1D8E798B003A7DEA /* LintFileComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED381D8E77AB003A7DEA /* LintFileComment.swift */; };
 		8507ED3D1D8ED9C3003A7DEA /* CommentLintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */; };
+		858BDDA61D9B00C5005A6CB5 /* RegexpMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */; };
+		858BDDA81D9B010B005A6CB5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDA71D9B010B005A6CB5 /* Extensions.swift */; };
+		858BDDA91D9B01A3005A6CB5 /* RegexpMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */; };
+		858BDDAA1D9B01A4005A6CB5 /* RegexpMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */; };
+		858BDDAB1D9B01A7005A6CB5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDA71D9B010B005A6CB5 /* Extensions.swift */; };
+		858BDDAC1D9B01A7005A6CB5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDA71D9B010B005A6CB5 /* Extensions.swift */; };
+		858BDDAE1D9B0657005A6CB5 /* MatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */; };
+		858BDDAF1D9B0671005A6CB5 /* MatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */; };
+		858BDDB01D9B0671005A6CB5 /* MatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */; };
 		85E19CC51D8EF6EA00F11938 /* CodeBlockAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */; };
 		85E19CC91D8F024E00F11938 /* LintLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC81D8F024E00F11938 /* LintLine.swift */; };
 		85E19CCA1D8F07B700F11938 /* LintLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC81D8F024E00F11938 /* LintLine.swift */; };
@@ -101,9 +110,12 @@
 		8507ED211D8B274C003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommaSpaceTests.swift; sourceTree = "<group>"; };
 		8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrailingCurlyBracketTests.swift; sourceTree = "<group>"; };
-		8507ED321D8D8906003A7DEA /* Regexp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regexp.swift; sourceTree = "<group>"; };
+		8507ED321D8D8906003A7DEA /* MatchCorrector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCorrector.swift; sourceTree = "<group>"; };
 		8507ED381D8E77AB003A7DEA /* LintFileComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintFileComment.swift; sourceTree = "<group>"; };
 		8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLintTests.swift; sourceTree = "<group>"; };
+		858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexpMatch.swift; sourceTree = "<group>"; };
+		858BDDA71D9B010B005A6CB5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchPattern.swift; sourceTree = "<group>"; };
 		85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlockAnalyzer.swift; sourceTree = "<group>"; };
 		85E19CC81D8F024E00F11938 /* LintLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintLine.swift; sourceTree = "<group>"; };
 		85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlock.swift; sourceTree = "<group>"; };
@@ -191,7 +203,6 @@
 				85E19CC81D8F024E00F11938 /* LintLine.swift */,
 				8507ED0D1D8B2695003A7DEA /* LintSpace.swift */,
 				8507ED381D8E77AB003A7DEA /* LintFileComment.swift */,
-				85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */,
 				85E19CC71D8F016500F11938 /* Regex */,
 				85E19CC61D8F015300F11938 /* CodeAnalyzer */,
 			);
@@ -240,6 +251,7 @@
 		85E19CC61D8F015300F11938 /* CodeAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
+				85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */,
 				85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */,
 				85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */,
 				85E19CD21D8F1D6200F11938 /* CodePosition.swift */,
@@ -250,7 +262,10 @@
 		85E19CC71D8F016500F11938 /* Regex */ = {
 			isa = PBXGroup;
 			children = (
-				8507ED321D8D8906003A7DEA /* Regexp.swift */,
+				8507ED321D8D8906003A7DEA /* MatchCorrector.swift */,
+				858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */,
+				858BDDA71D9B010B005A6CB5 /* Extensions.swift */,
+				858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */,
 			);
 			name = Regex;
 			sourceTree = "<group>";
@@ -324,7 +339,7 @@
 				TargetAttributes = {
 					8507ECEC1D8B2631003A7DEA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = U2F9EXLY9X;
+						DevelopmentTeam = 46ETJSLJJM;
 						ProvisioningStyle = Automatic;
 					};
 					8507ECFD1D8B2631003A7DEA = {
@@ -335,7 +350,7 @@
 					};
 					8507ED151D8B274C003A7DEA = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = U2F9EXLY9X;
+						DevelopmentTeam = 46ETJSLJJM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -391,16 +406,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858BDDAE1D9B0657005A6CB5 /* MatchPattern.swift in Sources */,
 				85E19CCF1D8F1D3400F11938 /* CodeBlock.swift in Sources */,
 				85E19CD71D90716200F11938 /* EmptyLineCorrection.swift in Sources */,
-				8507ED331D8D8906003A7DEA /* Regexp.swift in Sources */,
+				8507ED331D8D8906003A7DEA /* MatchCorrector.swift in Sources */,
 				85E19CC91D8F024E00F11938 /* LintLine.swift in Sources */,
 				8507ECF31D8B2631003A7DEA /* ViewController.swift in Sources */,
 				85E19CC51D8EF6EA00F11938 /* CodeBlockAnalyzer.swift in Sources */,
 				85E19CD31D8F1D6200F11938 /* CodePosition.swift in Sources */,
+				858BDDA81D9B010B005A6CB5 /* Extensions.swift in Sources */,
 				8507ED391D8E77AB003A7DEA /* LintFileComment.swift in Sources */,
 				8507ED0E1D8B2695003A7DEA /* LintSpace.swift in Sources */,
 				8507ECF11D8B2631003A7DEA /* AppDelegate.swift in Sources */,
+				858BDDA61D9B00C5005A6CB5 /* RegexpMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,21 +427,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */,
+				858BDDAB1D9B01A7005A6CB5 /* Extensions.swift in Sources */,
 				8507ED3B1D8E798B003A7DEA /* LintFileComment.swift in Sources */,
 				85E19CD81D90717C00F11938 /* EmptyLineCorrection.swift in Sources */,
 				28DCA3291D9696470005EE8C /* PrivatizerTests.swift in Sources */,
 				8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */,
-				8507ED341D8D965B003A7DEA /* Regexp.swift in Sources */,
+				8507ED341D8D965B003A7DEA /* MatchCorrector.swift in Sources */,
 				8507ED311D8C8198003A7DEA /* TrailingCurlyBracketTests.swift in Sources */,
 				85E19CD41D8F1D6B00F11938 /* CodePosition.swift in Sources */,
 				85E19CD01D8F1D3900F11938 /* CodeBlock.swift in Sources */,
 				8507ED101D8B26B5003A7DEA /* ColonSpacerTests.swift in Sources */,
 				85E19CDD1D91CB5200F11938 /* EmptyLineInsertionTests.swift in Sources */,
+				858BDDA91D9B01A3005A6CB5 /* RegexpMatch.swift in Sources */,
 				85E19CCD1D8F07BE00F11938 /* CodeBlockAnalyzer.swift in Sources */,
 				85E19CE11D91D79C00F11938 /* CodeBlockAnalyzerTests.swift in Sources */,
 				8507ED3D1D8ED9C3003A7DEA /* CommentLintTests.swift in Sources */,
 				2857BC161D8BF1B800E22971 /* ReturnArrowSpacerTests.swift in Sources */,
 				85E19CCB1D8F07B900F11938 /* LintLine.swift in Sources */,
+				858BDDAF1D9B0671005A6CB5 /* MatchPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858BDDB01D9B0671005A6CB5 /* MatchPattern.swift in Sources */,
 				85E19CD11D8F1D3A00F11938 /* CodeBlock.swift in Sources */,
 				85E19CD91D90717D00F11938 /* EmptyLineCorrection.swift in Sources */,
 				85E19CCC1D8F07BE00F11938 /* CodeBlockAnalyzer.swift in Sources */,
@@ -438,9 +460,11 @@
 				8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */,
 				85E19CCA1D8F07B700F11938 /* LintLine.swift in Sources */,
 				85E19CD51D8F1D6B00F11938 /* CodePosition.swift in Sources */,
+				858BDDAC1D9B01A7005A6CB5 /* Extensions.swift in Sources */,
 				8507ED3A1D8E798B003A7DEA /* LintFileComment.swift in Sources */,
-				8507ED351D8D9663003A7DEA /* Regexp.swift in Sources */,
+				8507ED351D8D9663003A7DEA /* MatchCorrector.swift in Sources */,
 				8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */,
+				858BDDAA1D9B01A4005A6CB5 /* RegexpMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U2F9EXLY9X;
+				DEVELOPMENT_TEAM = 46ETJSLJJM;
 				INFOPLIST_FILE = Swinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -585,7 +609,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U2F9EXLY9X;
+				DEVELOPMENT_TEAM = 46ETJSLJJM;
 				INFOPLIST_FILE = Swinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -633,7 +657,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U2F9EXLY9X;
+				DEVELOPMENT_TEAM = 46ETJSLJJM;
 				INFOPLIST_FILE = SwiftyLinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -650,7 +674,7 @@
 				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U2F9EXLY9X;
+				DEVELOPMENT_TEAM = 46ETJSLJJM;
 				INFOPLIST_FILE = SwiftyLinter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;

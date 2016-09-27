@@ -18,7 +18,7 @@ class CommentLintTests: XCTestCase {
     
     func testThat_NewCommentLines_AreExtracted_FromDefaultXCodeGeneratedComment() {
         let input = defaultXcodeComment + onlySwiftContent
-        let expected = ["//\n//  ColonSpacer.swift\n","//  Copyright © 2016 Vijaya Prakash Kandel. All rights reserved.\n//\n"]
+        let expected = ["//\n","//  Copyright © 2016 Vijaya Prakash Kandel. All rights reserved.\n//\n"]
         
         let output = LintFileComment().extractNewCommentLines(from: input)
         
