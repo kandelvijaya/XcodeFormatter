@@ -89,12 +89,14 @@ extension SourceEditorCommand {
     ///
     /// - parameter invocation: Text Buffer
     func ensureProperSpacing(invocation: XCSourceEditorCommandInvocation) {
+        let spaceLinter = LintSpace()
+        
         forEachLine(invocation: invocation) { strings in
             
-            let allCorrected = [strings].map { LintSpace().correctColonSpace(line: $0) }
-                .map { LintSpace().correctCommaSeparation(line: $0) }
-                .map { LintSpace().correctFunctionReturnArrow(line: $0) }
-                .map { LintSpace().correctTrailingCurlyBracket(line: $0) }.first
+            let allCorrected = [strings].map { spaceLinter.correctColonSpace(line: $0) }
+                .map { spaceLinter.correctCommaSeparation(line: $0) }
+                .map { spaceLinter.correctFunctionReturnArrow(line: $0) }
+                .map { spaceLinter.correctTrailingCurlyBracket(line: $0) }.first
         
             return allCorrected
         }

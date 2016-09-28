@@ -11,11 +11,16 @@ enum CodeBlockType: String {
     case StructKind = "struct"
     case EnumKind = "enum"
     case ExtensionKind  = "extension"
+    case FunctionKind = "func"
     case OtherKind = ""     //NOTSET
-    
-    static func primaryTypesStringRepresentation() -> [String] {
-        return [CodeBlockType.ProtocolKind.rawValue, CodeBlockType.ClassKind.rawValue, CodeBlockType.StructKind.rawValue,
-                CodeBlockType.EnumKind.rawValue, CodeBlockType.ExtensionKind.rawValue]
+
+    static var primaries: [CodeBlockType] {
+        return [.ProtocolKind, .ClassKind, .StructKind, .EnumKind, .ExtensionKind]
+    }
+
+    //Other is not part of all
+    static var all: [CodeBlockType] {
+        return primaries + [.FunctionKind]
     }
     
 }
@@ -30,28 +35,6 @@ struct CodeBlock {
         start = startPosition
         end = endPosition
         type = typeForCodeBlock()
-    }
-
-    func lineIndexesOfEmptyLinesAtStart(content: [String]) -> [Int] {
-        var accumulator = [Int]()
-        var currentLineIndex = self.start.line + 1
-        
-        while content[currentLineIndex] == "/n" {
-            accumulator.append(currentLineIndex)
-            currentLineIndex += 1
-        }
-        return accumulator
-    }
-    
-    func lineIndexesOfEmptyLinesBeforeEnd(content: [String]) -> [Int] {
-        var accumulator = [Int]()
-        var currentLineIndex = self.start.line - 1
-        
-        while content[currentLineIndex] == "/n" {
-            accumulator.append(currentLineIndex)
-            currentLineIndex -= 1
-        }
-        return accumulator
     }
     
     ///Type information is usually encoded into the starting line.
@@ -73,13 +56,26 @@ struct CodeBlock {
     ///
     private func typeForCodeBlock() -> CodeBlockType {
         let typeInfoLine = start.lineContent
-        let includedTypeRep = CodeBlockType.primaryTypesStringRepresentation().filter{
-            //In all case Type are followed with Space.
-            // sometimes there might be .class
-            //TODO: Performance checking and/or replacing with Regex
+
+        //In all case, Type are followed with Space.
+        //exclude lines like these `X.map{ $0.class }.forEach{` although there is a class keyword
+        let includedTypeRep = CodeBlockType.all.map{ $0.rawValue }.filter{
             typeInfoLine.contains($0 + " ") && !typeInfoLine.contains("."+$0)
         }
-        assert(includedTypeRep.count <= 1)
+
+        //NOTE: Anticipating that a line might have two keywords for code blocks like `class func`
+        let intermediate = includedTypeRep.reduce(""){ $0 + $1}
+
+        // to exclude `class func dosomething() { }` to have line separators
+        if intermediate == CodeBlockType.ClassKind.rawValue + CodeBlockType.FunctionKind.rawValue {
+            return CodeBlockType.FunctionKind
+        }
+
+        ///to exclude `protocol A: class{` to have line separators
+        if intermediate == CodeBlockType.ProtocolKind.rawValue + CodeBlockType.ClassKind.rawValue {
+            return CodeBlockType.ProtocolKind
+        }
+
         if let foundTypeRep = includedTypeRep.first {
             return CodeBlockType(rawValue: foundTypeRep)!
         } else {
@@ -87,4 +83,31 @@ struct CodeBlock {
         }
     }
     
+}
+
+//MARK:- empty line analyzers
+extension CodeBlock {
+
+    func lineIndexesOfEmptyLinesAtStart(content: [String]) -> [Int] {
+        var accumulator = [Int]()
+        var currentLineIndex = self.start.line + 1
+
+        while content[currentLineIndex] == "/n" {
+            accumulator.append(currentLineIndex)
+            currentLineIndex += 1
+        }
+        return accumulator
+    }
+
+    func lineIndexesOfEmptyLinesBeforeEnd(content: [String]) -> [Int] {
+        var accumulator = [Int]()
+        var currentLineIndex = self.start.line - 1
+
+        while content[currentLineIndex] == "/n" {
+            accumulator.append(currentLineIndex)
+            currentLineIndex -= 1
+        }
+        return accumulator
+    }
+
 }

@@ -64,7 +64,7 @@ class CodeBlockAnalyzerTests: XCTestCase {
         XCTAssertEqual(output.type, CodeBlockType.ProtocolKind)
     }
     
-    func testThat_FunctionDeclaration_HasTypeOfOther() {
+    func testThat_FunctionDeclaration_HasTypeOfFunctionKind() {
         let input = ["func do(){\n","}\n"]
         
         guard let output = CodeBlockAnalyzer().codeBlocks(for: input).first else {
@@ -72,7 +72,7 @@ class CodeBlockAnalyzerTests: XCTestCase {
             return
         }
         
-        XCTAssert(output.type == CodeBlockType.OtherKind)
+        XCTAssert(output.type == CodeBlockType.FunctionKind)
     }
     
     func testThat_IfElseBlock_HasTypeOfOther() {
@@ -143,6 +143,25 @@ class CodeBlockAnalyzerTests: XCTestCase {
         
         XCTAssert(structCodeBlock.type! == CodeBlockType.StructKind)
         XCTAssert(enumCodeBlock.type! == CodeBlockType.EnumKind)
+        
+    }
+
+    func testThat_ProtocolConformingToClass_IsIdentified() {
+        let input = ["protocol A: class {\n", " }\n"]
+        let output = CodeBlockAnalyzer().codeBlocks(for: input)
+
+        XCTAssert(output[0].type! == CodeBlockType.ProtocolKind)
+    }
+    
+    func testPerformanceOfCodeBlockAnalyzer() {
+        let singleItem = ["struct A {\n", "enum Type{\n", "case .a, .b\n", "}\n", "}\n", "\n"]
+        let inputCode = (0..<1000).map{_ in singleItem }.reduce([String]()) { $0 + $1 }
+        
+        self.measure {
+            let output = CodeBlockAnalyzer().codeBlocks(for: inputCode)
+            XCTAssert(output.count == 2000)
+        }
+        
         
     }
     
