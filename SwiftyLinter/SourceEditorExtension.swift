@@ -21,7 +21,7 @@ enum CommandIdentifier: String {
 
 enum CommandName: String {
     
-    case swiftlyLintAll = "Lint All"
+    case swiftlyLintAll = "All(Line, Comment, Space)"
     case finilizeClass = "Finilize Class"
     case correctEmptyLine = "Correct Empty Line"
     case correctInterSpace = "Correct Inter Space"
@@ -31,8 +31,10 @@ enum CommandName: String {
 
 struct Command {
     
+    static let moduleName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
+    
     //File Name
-    static let principleClass = "SourceEditorCommand"
+    static let principleClass =  moduleName + ".SourceEditorCommand"
     
     //Command Name and identifier
     static let swiftlyLintAll = (CommandName.swiftlyLintAll, CommandIdentifier.swiftlyLintAll)
@@ -48,8 +50,8 @@ struct Command {
     static func allCommands() -> [[XCSourceEditorCommandDefinitionKey: Any]] {
         return all().map {
             [XCSourceEditorCommandDefinitionKey.classNameKey: principleClass,
-             XCSourceEditorCommandDefinitionKey.identifierKey: $0.1,
-             XCSourceEditorCommandDefinitionKey.nameKey: $0.0
+             XCSourceEditorCommandDefinitionKey.identifierKey: $0.1.rawValue,
+             XCSourceEditorCommandDefinitionKey.nameKey: $0.0.rawValue
              ]
         }
     }
@@ -58,18 +60,10 @@ struct Command {
 
 class SourceEditorExtension: NSObject, XCSourceEditorExtension {
     
+    func extensionDidFinishLaunching() {}
     
-    func extensionDidFinishLaunching() {
-        //If your extension needs to do any work at launch, implement this optional method.
-        let process = NSProcessInfo.processInfo().environment[""]
-    }
-    
-     /*var commandDefinitions: [[XCSourceEditorCommandDefinitionKey: Any]] {
-        
-        return [[XCSourceEditorCommandDefinitionKey.classNameKey: "SourceEditorCommand",
-                XCSourceEditorCommandDefinitionKey.identifierKey: "SwiftlyLintAll",
-                XCSourceEditorCommandDefinitionKey.nameKey: "Swiftly Lint All"
-        ]]
-     }*/
+     var commandDefinitions: [[XCSourceEditorCommandDefinitionKey: Any]] {
+        return Command.allCommands()
+     }
     
 }

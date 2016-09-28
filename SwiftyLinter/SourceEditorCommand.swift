@@ -14,13 +14,24 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         
         switch invocation.commandIdentifier {
-            case "FinilizeClass":
+            
+            case CommandIdentifier.finilizeClass.rawValue:
                 markClassFinalUnlessOpenSpecified(invocation: invocation)
-            case "LintAll":
-                markClassFinalUnlessOpenSpecified(invocation: invocation)
+            
+            case CommandIdentifier.correctInterSpace.rawValue:
                 ensureProperSpacing(invocation: invocation)
-                ensureProperFileComment(invocation: invocation)
+            
+            case CommandIdentifier.correctEmptyLine.rawValue:
                 ensureProperEmptyLines(invocation: invocation)
+            
+            case CommandIdentifier.correctComment.rawValue:
+                ensureProperFileComment(invocation: invocation)
+            
+            case CommandIdentifier.swiftlyLintAll.rawValue:
+                ensureProperSpacing(invocation: invocation)
+                ensureProperEmptyLines(invocation: invocation)
+                ensureProperFileComment(invocation: invocation)
+            
             default:
                 break
         }
