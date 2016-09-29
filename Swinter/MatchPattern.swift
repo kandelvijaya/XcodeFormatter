@@ -21,7 +21,8 @@ enum MatchPattern: String {
     
     
     //Other patterns
-    case stringQuote = "[^\\\\]\\\""        // Mathces all occurances of \" but not \\", \\\"
+    case stringQuote = "([^\\\\]\\\"|\\\")"        // Mathces all occurances of \" but not \\", \\\"
+    case singleLineComment = "//"
     case fileComment = "^(\\/\\/\\n)\\/\\/.*.swift\\n\\/\\/.*\\n\\/\\/\\n\\/\\/.*\\n(\\/\\/.*\\n\\/\\/\n)"
     
     

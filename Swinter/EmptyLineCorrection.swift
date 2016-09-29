@@ -57,8 +57,10 @@ class EmptyLineCorrection {
     
     //TODO: Refactor these 2 algorithms into a simplified model
     private func correctEmptySpaceAbove(position: CodePosition) {
-        var currentSearchLineIndex = correctedLineIndex(for: position) - 1       //looking upwards
+        let currentSearchLineIndex = correctedLineIndex(for: position) - 1       //looking upwards
+        let indexToInsertEmptyLine = correctedLineIndex(for: position)
         var indicesOfEmptyLines = [Int]()
+        var indicesOfCommentLines = [Int]()
         
         //When the code block starts the file.
         if currentSearchLineIndex < 0 {
@@ -66,18 +68,19 @@ class EmptyLineCorrection {
             return
         }
         
-        while isEmpty(line: mutableContent[currentSearchLineIndex] as! String) {
-            indicesOfEmptyLines.append(currentSearchLineIndex)
-            
-            if currentSearchLineIndex == 0 {
+        for index in stride(from: currentSearchLineIndex, to: -1, by: -1) {
+            if isEmpty(line: mutableContent[index] as! String) {
+                indicesOfEmptyLines.append(index)
+            }else if (mutableContent[index] as! String).hasPrefix("//") {
+                indicesOfCommentLines.append(index)
+                continue
+            }else {
                 break
-            } else {
-                currentSearchLineIndex -= 1
             }
         }
         
         if indicesOfEmptyLines.count == 0 {
-            addEmptySpace(at: correctedLineIndex(for: position))
+            addEmptySpace(at: indexToInsertEmptyLine - indicesOfCommentLines.count)
         } else if indicesOfEmptyLines.count == 1{
             return
         } else {

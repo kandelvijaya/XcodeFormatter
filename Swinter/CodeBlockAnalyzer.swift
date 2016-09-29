@@ -18,13 +18,15 @@ final class CodeBlockAnalyzer {
     func codeBlocks(for content: [String]) -> [CodeBlock] {
         for (lineIndex, lineContent) in content.enumerated() {
 
+            if lineContent.hasPrefix("//") { continue }
+            
             //Early Exit
-            if !lineContent.contains(CodeBlockIndicator.opening.rawValue) && !lineContent.contains(CodeBlockIndicator.closing.rawValue) {
+            if !lineContent.contains(CodeBlockIndicator.opening.rawValue) && !lineContent.contains(CodeBlockIndicator.closing.rawValue){
                 continue
             }
 
             //TODO: this method takes a lot of CPU cycles. Find a alternative.
-            for (section, char) in lineContent.characters.enumerated() {
+            for (section, char) in lineContent.characters.enumerated() where !isCharacterInsideStringQuote(at: section, onLine: lineContent){
                 switch String(char) {
                 case CodeBlockIndicator.opening.rawValue:
                     let pos = CodePosition(lineContent: lineContent, line: lineIndex, section: section, indicator: .opening)
@@ -61,4 +63,10 @@ final class CodeBlockAnalyzer {
         }
     }
     
+    private func isCharacterInsideStringQuote(at section: Int, onLine line: String) -> Bool {
+        let startIndex = line.index(line.startIndex, offsetBy: section)
+        let endIndex = line.index(line.startIndex, offsetBy: section + 1)
+        let range = Range(uncheckedBounds: (startIndex, endIndex))
+        return RegexpMatch.isMatch(atRange: range, insideQuoteStringOnLine: line)
+    }
 }

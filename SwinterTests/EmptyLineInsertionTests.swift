@@ -113,6 +113,24 @@ class LintLineTests: XCTestCase {
         let expected = [EMP,"func do(){}\n",EMP, "func doThat(){}\n"]
         assertThat(inputCode: input, produces: expected)
     }
+    
+    func testThat_CommentAndClassDeclaration_AreNotSeparatedWhileInsertingEmptyLines() {
+        let input = [EMP,"//this is comment \n", "class A { \n", EMP,"}\n", EMP]
+        let expected = input
+        assertThat(inputCode: input, produces: expected)
+    }
+    
+    func testThat_CommentAndClassDeclaration_AreProperlyCorrected() {
+        let input = ["//this is comment \n", "class A { \n", EMP,"}\n", EMP]
+        let expected = [EMP] + input
+        assertThat(inputCode: input, produces: expected)
+    }
+    
+    func testThat_DeclarationInsideStringQuotes_AreNotTouched() {
+        let input = ["\" class A { \" \n", "\"}\" \n"]
+        let expected = input
+        assertThat(inputCode: input, produces: expected)
+    }
 
 
     //MARK:- tester

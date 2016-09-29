@@ -161,8 +161,24 @@ class CodeBlockAnalyzerTests: XCTestCase {
             let output = CodeBlockAnalyzer().codeBlocks(for: inputCode)
             XCTAssert(output.count == 2000)
         }
-        
-        
+    }
+    
+    func testThat_DeclarationInsideAStringQuote_AreNotCounted() {
+        let input = ["let a = \"protocol A: class {\"\n", "\" }\"\n"]
+        let output = CodeBlockAnalyzer().codeBlocks(for: input)
+        XCTAssert(output.count == 0)
+    }
+    
+    func testThat_DeclarationInsideAStringQuote_Mismatched_AreNotCounted() {
+        let input = ["let a = \"protocol A: class {\"\n", "}\n"]
+        let output = CodeBlockAnalyzer().codeBlocks(for: input)
+        XCTAssert(output.count == 0)
+    }
+    
+    func testThat_DeclarationInsideSingleComment_AreNotCounted() {
+        let input = ["/// protocol A: class {\n", "/// }\n"]
+        let output = CodeBlockAnalyzer().codeBlocks(for: input)
+        XCTAssert(output.count == 0)
     }
     
 }

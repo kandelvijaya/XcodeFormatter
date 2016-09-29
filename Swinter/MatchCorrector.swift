@@ -40,7 +40,7 @@ final class MatchCorrector {
                 // Only indeces with rule are corrected.
                 if let replaceMent = rules[index] {
                     //Escape correction if the current match is inside a Quote
-                    guard !RegexpMatch.isMatch(atRange: cpRange, insideQuoteStringOnLine: line) else {
+                    guard !RegexpMatch.isMatch(atRange: cpRange.range, insideQuoteStringOnLine: line) else {
                         continue
                     }
                     let currentRange = rangeFrom(range: cpRange.range, forString: correctedLine, offset: offset)

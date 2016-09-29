@@ -18,6 +18,7 @@ struct CaptureGroupMatchRange {
 final class RegexpMatch {
     
     private static let quoteRegex = MatchPattern.stringQuote.regex
+    private static let commentRegex = MatchPattern.singleLineComment.regex
     
     static func findAllMatches(in contentString: String, with regex: NSRegularExpression) -> [Match] {
         var matches: [Match] = []
@@ -47,10 +48,10 @@ final class RegexpMatch {
     /// - parameter line:  String
     ///
     /// - returns: Bool
-    static func isMatch(atRange range: CaptureGroupMatchRange, insideQuoteStringOnLine line: String) -> Bool {
+    static func isMatch(atRange range: Range<String.Index>, insideQuoteStringOnLine line: String) -> Bool {
         guard line.contains(String(Character("\""))) else { return false }
         guard let regex = quoteRegex else { return false }
-        let substringUntilMatch = line.substring(to: range.range.lowerBound)
+        let substringUntilMatch = line.substring(to: range.lowerBound)
         let leftQuoteCount = regex.numberOfMatches(in: substringUntilMatch, options: [], range: NSMakeRange(0, substringUntilMatch.characters.count) )
         return leftQuoteCount % 2 != 0
     }
