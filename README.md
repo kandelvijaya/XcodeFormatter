@@ -62,6 +62,8 @@ Xcode Swift Coding Guidelines Linter.
      }
      
      ```
+9. Sub-commands for Xcode to pick individual lint items
+10. Turn off linting and correction if the match is inside a string quote/literal
 
 ## Using and Customization
 
@@ -76,10 +78,8 @@ Xcode Swift Coding Guidelines Linter.
 3. Its usually better to start by reading Unit Tests for specific area before actually doing something. Unit Tests are `the` documentation.
 
 ## In progress
-1. Performance Testing and Instrumentation
-2. Sub-commands for Xcode to pick individual lint items
 3. Adding support to have empty before and after each `//MARK:` annoataion
 
 ## TODO
 1. Performance of the whole linting/correcting process
-2. Refactoring of rutines that add empty lines before/after 
+2. Refactoring of methods that add empty lines before/after 
