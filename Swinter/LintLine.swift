@@ -30,9 +30,10 @@ final class LintLine {
     }
 
     /// returns [CodePosition] for CodeBlocks that require empty line above and below
+
     private func primaryCodeBlockPositons() -> [CodePosition] {
 
-        let allPrimaryCodeBlocksSpanningMultilpleLines = allCodeBlocks.filter{
+        let allPrimaryCodeBlocksSpanningMultilpleLines = allCodeBlocks.filter {
             if let thisType = $0.type, CodeBlockType.primaries.contains(thisType) {
                 return $0.start.line != $0.end.line
             }
@@ -43,9 +44,11 @@ final class LintLine {
         //Each codeblock has start and end Position
         return primaries.map{ [$0.start, $0.end] }.flatMap{ $0 }
     }
-
+    
+    
     /// returns [CodePositon] of Function CodeBlocks with just start position to correct 
     /// for empty line above it. 
+
     private func functionCodeBlockPositions() -> [CodePosition] {
         let allFuncCodeBlocks = allCodeBlocks.filter {
             if let thisType = $0.type, thisType == CodeBlockType.FunctionKind {
@@ -59,3 +62,4 @@ final class LintLine {
     }
 
 }
+

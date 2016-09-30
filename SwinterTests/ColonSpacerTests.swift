@@ -64,7 +64,12 @@ class ColonSpacerTests: XCTestCase {
         let expected = input
         assertThat(input: input, producesOutput: expected)
     }
-    
+   
+    func testThat_ColonAfterMark_IsNotCorrected() {
+        let input = "//MARK:- thathing \n"
+        let expected = input
+        assertThat(input: input, producesOutput: expected)
+    }
     
     //MARK:- Testers
     private func assertThat(input: [String], producesOutput expected: [String]) {

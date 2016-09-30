@@ -21,7 +21,7 @@ enum CommandIdentifier: String {
 
 enum CommandName: String {
     
-    case swiftlyLintAll = "All(Line, Comment, Space)"
+    case swiftlyLintAll = "All(Line, Comment, Space) [1.0]"
     case finilizeClass = "Finilize Class"
     case correctEmptyLine = "Correct Empty Line"
     case correctInterSpace = "Correct Inter Space"

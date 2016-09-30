@@ -126,6 +126,20 @@ class LintLineTests: XCTestCase {
         assertThat(inputCode: input, produces: expected)
     }
     
+    func assertThat_CommentAndTypes_AreProperlyCorrected() {
+        let input = [EMP, EMP, "//Comment\n", "struct A {\n", "something \n", "}\n", EMP]
+        let expected = Array(input.dropFirst())
+        assertThat(inputCode: input, produces: expected)
+    }
+    
+    func assertThat_CommentAndTypesInComplexStructure_AreProperlyCorrected() {
+        let input = ["let a: Int\n", "//Comment\n", "struct A {\n", "something \n", "}\n", EMP]
+        let expected = ["let a: Int\n", EMP, "//Comment\n", "struct A {\n", "something \n", "}\n", EMP]
+        assertThat(inputCode: input, produces: expected)
+    }
+    
+    
+    
     func testThat_DeclarationInsideStringQuotes_AreNotTouched() {
         let input = ["\" class A { \" \n", "\"}\" \n"]
         let expected = input
