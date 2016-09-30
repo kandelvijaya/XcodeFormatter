@@ -20,7 +20,7 @@ final class CodeBlockAnalyzer {
     func codeBlocks(for content: [String]) -> [CodeBlock] {
         for (lineIndex, lineContent) in content.enumerated() {
 
-            if lineContent.hasPrefix("//") { continue }
+            if lineContent.isInsideComment() { continue }
             
             //Early Exit
             if !lineContent.contains(CodeBlockIndicator.opening.rawValue) && !lineContent.contains(CodeBlockIndicator.closing.rawValue) {

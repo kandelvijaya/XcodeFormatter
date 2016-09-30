@@ -32,7 +32,7 @@ final class RegexpMatch {
         var matches: [Match] = []
         
         //early exit when comment
-        if ignoringMatch.contains(.insideSingleComment) && contentString.hasPrefix("//") {
+        if ignoringMatch.contains(.insideSingleComment) && contentString.isInsideComment() {
             return matches
         }
         

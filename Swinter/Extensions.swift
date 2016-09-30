@@ -30,3 +30,12 @@ public extension NSRegularExpression {
     }
     
 }
+
+extension String {
+    
+    func isInsideComment() -> Bool {
+        let trimmedSelf = self.trimmingCharacters(in: CharacterSet.whitespaces)
+        return trimmedSelf.hasPrefix("//")
+    }
+    
+}

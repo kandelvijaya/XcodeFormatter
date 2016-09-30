@@ -71,9 +71,15 @@ class EmptyLineCorrection {
         for index in stride(from: currentSearchLineIndex, to: -1, by: -1) {
             if isEmpty(line: mutableContent[index] as! String) {
                 indicesOfEmptyLines.append(index)
-            }else if (mutableContent[index] as! String).hasPrefix("//") {
-                indicesOfCommentLines.append(index)
-                continue
+            }else if (mutableContent[index] as! String).isInsideComment() {
+                //If we encountered emptyLines before finding comments then stop this loop
+                if indicesOfEmptyLines.count > 0 {
+                    break
+                }else {
+                    indicesOfCommentLines.append(index)
+                    continue
+                }
+                
             }else {
                 break
             }
