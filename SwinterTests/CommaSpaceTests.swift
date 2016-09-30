@@ -49,6 +49,12 @@ final class CommaSpaceTests: XCTestCase {
         assertThat(input: input, produces: expected)
     }
     
+    func testThat_CommaInsideComment_IsNotCorrected() {
+        let input = "//MARK:- UITableViewDelegate,UITableViewDataSource"
+        let expected = input
+        assertThat(input: input, produces: expected)
+    }
+    
     //MARK:- Testers
     private func assertThat(input: [String], produces expected: [String]) {
         for (input1, expected1) in zip(input, expected) {

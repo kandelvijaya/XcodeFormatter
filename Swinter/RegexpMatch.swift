@@ -14,14 +14,27 @@ struct CaptureGroupMatchRange {
     let range: Range<String.Index>
 }
 
+struct IgnoreMatch: OptionSet {
+    var rawValue: UInt8
+    
+    static let insideSingleComment = IgnoreMatch(rawValue: 1 << 0)
+    static let insideStringQuote = IgnoreMatch(rawValue: 1 << 1)
+    
+    static let insideStringOrComment:IgnoreMatch = [.insideSingleComment, .insideStringQuote]
+}
 
 final class RegexpMatch {
     
     private static let quoteRegex = MatchPattern.stringQuote.regex
     private static let commentRegex = MatchPattern.singleLineComment.regex
     
-    static func findAllMatches(in contentString: String, with regex: NSRegularExpression) -> [Match] {
+    static func findAllMatches(in contentString: String, with regex: NSRegularExpression, ignoringMatch: IgnoreMatch = []) -> [Match] {
         var matches: [Match] = []
+        
+        //early exit when comment
+        if ignoringMatch.contains(.insideSingleComment) && contentString.hasPrefix("//") {
+            return matches
+        }
         
         regex.enumerateMatches(in: contentString, options: .reportCompletion, range: NSMakeRange(0, contentString.characters.count), using: { (textCheckingResult, flags, status) in
             
@@ -29,6 +42,12 @@ final class RegexpMatch {
                 let cpRanges = (0..<textChecking.numberOfRanges)
                     .map{ textChecking.rangeAt($0) }
                     .map{ $0.toRange(forString: contentString) }
+                
+                //early exit when quoted inside
+                if ignoringMatch.contains(.insideStringQuote) && RegexpMatch.isMatch(atRange: cpRanges[0], insideQuoteStringOnLine: contentString) {
+                    return
+                }
+                
                 let cpContent = cpRanges.map { contentString.substring(with: $0) }
                 let cpMatchRanges = zip(cpContent, cpRanges).reduce([]){ $0 + [CaptureGroupMatchRange(content: $1.0, range: $1.1)] }
                 matches.append(Match(matches: cpMatchRanges))

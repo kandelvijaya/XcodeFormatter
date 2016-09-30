@@ -25,7 +25,7 @@ struct MatchCorrectionInfo {
 final class MatchCorrector {
     
     static func correct(with correctionInfo: MatchCorrectionInfo) -> String {
-        let matches = RegexpMatch.findAllMatches(in: correctionInfo.line, with: correctionInfo.regex)
+        let matches = RegexpMatch.findAllMatches(in: correctionInfo.line, with: correctionInfo.regex, ignoringMatch: .insideStringOrComment)
         let corrected = correct(line: correctionInfo.line, at: matches, with: correctionInfo.rules)
         return corrected
     }
@@ -39,10 +39,6 @@ final class MatchCorrector {
 
                 // Only indeces with rule are corrected.
                 if let replaceMent = rules[index] {
-                    //Escape correction if the current match is inside a Quote
-                    guard !RegexpMatch.isMatch(atRange: cpRange.range, insideQuoteStringOnLine: line) else {
-                        continue
-                    }
                     let currentRange = rangeFrom(range: cpRange.range, forString: correctedLine, offset: offset)
                     let currentOffset = -cpRange.content.characters.count + replaceMent.characters.count
                     offset += currentOffset
