@@ -39,7 +39,7 @@ final class MatchCorrector {
 
                 // Only indeces with rule are corrected.
                 if let replaceMent = rules[index] {
-                    let currentRange = rangeFrom(range: cpRange.range, forString: correctedLine, offset: offset)
+                    let currentRange = rangeFrom(range: cpRange.range, forString: line, offset: offset)
                     let currentOffset = -cpRange.content.characters.count + replaceMent.characters.count
                     offset += currentOffset
                     
@@ -52,6 +52,8 @@ final class MatchCorrector {
     }
     
     private static func rangeFrom(range: Range<String.Index>, forString: String, offset: Int) -> Range<String.Index> {
+        //fatal error: cannot decrement invalid index
+        //fatal error: cannot increment beyond endIndex
         let lowerIndex = forString.index(range.lowerBound, offsetBy: offset)
         let upperIndex = forString.index(range.upperBound, offsetBy: offset)
         return Range(uncheckedBounds: (lowerIndex, upperIndex))
