@@ -13,7 +13,7 @@ class TernaryOperatorSpacerTests: XCTestCase {
     
     func testThat_SimpleTernaryOperator_IsCorrectedWithProperSpaces() {
         let input = "let a = true?1:2\n"
-        let expected = "let a = true ? 1 : 2 \n"
+        let expected = "let a = true ? 1 : 2\n"
         assertThat(input, produces: expected)
     }
     
@@ -24,8 +24,8 @@ class TernaryOperatorSpacerTests: XCTestCase {
     }
     
     func testThat_NestedTernaryOperator_IsCorrectedProperly() {
-        let input = "let that = ( true?fals:true)?1:2\n"
-        let expected = "let that = ( true ? false : true) ? 1 : 2 \n"
+        let input = "let that = ( true?false:true)?1:2\n"
+        let expected = "let that = ( true ? false : true) ? 1 : 2\n"
         assertThat(input, produces: expected)
     }
     

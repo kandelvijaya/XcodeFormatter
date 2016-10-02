@@ -47,9 +47,7 @@ final class LintSpace {
         return MatchCorrector.correct(with: correctionInfo)
     }
     
-    /// Dont call Colon Space Linter after this method if you want to preserve correction
-    /// Call ColonSpaceLint()  -- then call this one for best results
-    ///
+    /// For correct results, dont call colonCorrector after this method.
     func correctTernaryOperator(line: String) -> String {
         guard let regex = Constants.ternaryOperatorRegex else { return line }
         guard line.contains(":") && line.contains("?") else { return line }
