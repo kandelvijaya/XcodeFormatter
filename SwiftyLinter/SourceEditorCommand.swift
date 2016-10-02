@@ -104,10 +104,13 @@ extension SourceEditorCommand {
         
         forEachLine(invocation: invocation) { strings in
             
-            let allCorrected = [strings].map { spaceLinter.correctColonSpace(line: $0) }
+            let allCorrected = [strings]
+                .map { spaceLinter.correctColonSpace(line: $0) }
                 .map { spaceLinter.correctCommaSeparation(line: $0) }
+                .map { spaceLinter.correctTernaryOperator(line: $0) }
                 .map { spaceLinter.correctFunctionReturnArrow(line: $0) }
-                .map { spaceLinter.correctTrailingCurlyBracket(line: $0) }.first
+                .map { spaceLinter.correctTrailingCurlyBracket(line: $0) }
+                .first
         
             return allCorrected
         }
