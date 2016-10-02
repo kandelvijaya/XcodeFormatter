@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Swinter
+@testable import XcodeFormatter
 
 final class TrailingCurlyBracketTests: XCTestCase {
     

@@ -18,7 +18,7 @@
 		8507ED191D8B274C003A7DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8507ED181D8B274C003A7DEA /* Cocoa.framework */; };
 		8507ED1E1D8B274C003A7DEA /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */; };
 		8507ED201D8B274C003A7DEA /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */; };
-		8507ED241D8B274C003A7DEA /* SwiftyLinter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8507ED241D8B274C003A7DEA /* XFormatter.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8507ED161D8B274C003A7DEA /* XFormatter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8507ED291D8B27E3003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 		8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED0D1D8B2695003A7DEA /* LintSpace.swift */; };
 		8507ED2F1D8BC153003A7DEA /* CommaSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */; };
@@ -83,7 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8507ED241D8B274C003A7DEA /* SwiftyLinter.appex in Embed App Extensions */,
+				8507ED241D8B274C003A7DEA /* XFormatter.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,17 +93,17 @@
 /* Begin PBXFileReference section */
 		2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnArrowSpacerTests.swift; sourceTree = "<group>"; };
 		28DCA3281D9696470005EE8C /* PrivatizerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivatizerTests.swift; sourceTree = "<group>"; };
-		8507ECED1D8B2631003A7DEA /* Swinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8507ECED1D8B2631003A7DEA /* XcodeFormatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcodeFormatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8507ECF01D8B2631003A7DEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8507ECF21D8B2631003A7DEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8507ECF41D8B2631003A7DEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8507ECF71D8B2631003A7DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8507ECF91D8B2631003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8507ECFE1D8B2631003A7DEA /* SwinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwinterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8507ECFE1D8B2631003A7DEA /* XcodeFormatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeFormatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8507ED041D8B2631003A7DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8507ED0D1D8B2695003A7DEA /* LintSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintSpace.swift; sourceTree = "<group>"; };
 		8507ED0F1D8B26B5003A7DEA /* ColonSpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColonSpacerTests.swift; sourceTree = "<group>"; };
-		8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftyLinter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8507ED161D8B274C003A7DEA /* XFormatter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = XFormatter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8507ED181D8B274C003A7DEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8507ED1C1D8B274C003A7DEA /* SwiftyLinter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftyLinter.entitlements; sourceTree = "<group>"; };
 		8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
@@ -156,60 +156,60 @@
 		8507ECE41D8B2631003A7DEA = {
 			isa = PBXGroup;
 			children = (
-				8507ECEF1D8B2631003A7DEA /* Swinter */,
-				8507ED011D8B2631003A7DEA /* SwinterTests */,
-				8507ED1A1D8B274C003A7DEA /* SwiftyLinter */,
 				8507ED171D8B274C003A7DEA /* Frameworks */,
 				8507ECEE1D8B2631003A7DEA /* Products */,
+				8507ECEF1D8B2631003A7DEA /* XcodeFormatter */,
+				8507ED1A1D8B274C003A7DEA /* XcodeFormatterExtension */,
+				8507ED011D8B2631003A7DEA /* XcodeFormatterTests */,
 			);
 			sourceTree = "<group>";
 		};
 		8507ECEE1D8B2631003A7DEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8507ECED1D8B2631003A7DEA /* Swinter.app */,
-				8507ECFE1D8B2631003A7DEA /* SwinterTests.xctest */,
-				8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */,
+				8507ECED1D8B2631003A7DEA /* XcodeFormatter.app */,
+				8507ECFE1D8B2631003A7DEA /* XcodeFormatterTests.xctest */,
+				8507ED161D8B274C003A7DEA /* XFormatter.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8507ECEF1D8B2631003A7DEA /* Swinter */ = {
+		8507ECEF1D8B2631003A7DEA /* XcodeFormatter */ = {
 			isa = PBXGroup;
 			children = (
 				8507ED111D8B26EB003A7DEA /* Core */,
 				8507ED2B1D8B3C2D003A7DEA /* Supporting files */,
 			);
-			path = Swinter;
+			path = XcodeFormatter;
 			sourceTree = "<group>";
 		};
-		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
+		8507ED011D8B2631003A7DEA /* XcodeFormatterTests */ = {
 			isa = PBXGroup;
 			children = (
-				8598D7601DA053E500AD8B65 /* TernaryOperatorSpacerTests.swift */,
-				28DCA3281D9696470005EE8C /* PrivatizerTests.swift */,
 				85E19CE01D91D79B00F11938 /* CodeBlockAnalyzerTests.swift */,
-				85E19CDC1D91CB5200F11938 /* EmptyLineInsertionTests.swift */,
-				8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */,
-				8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */,
-				2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */,
-				8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */,
 				8507ED0F1D8B26B5003A7DEA /* ColonSpacerTests.swift */,
+				8507ED2E1D8BC153003A7DEA /* CommaSpaceTests.swift */,
+				8507ED3C1D8ED9C3003A7DEA /* CommentLintTests.swift */,
+				85E19CDC1D91CB5200F11938 /* EmptyLineInsertionTests.swift */,
 				8507ED041D8B2631003A7DEA /* Info.plist */,
+				28DCA3281D9696470005EE8C /* PrivatizerTests.swift */,
+				2857BC151D8BF1B800E22971 /* ReturnArrowSpacerTests.swift */,
+				8598D7601DA053E500AD8B65 /* TernaryOperatorSpacerTests.swift */,
+				8507ED301D8C8198003A7DEA /* TrailingCurlyBracketTests.swift */,
 			);
-			path = SwinterTests;
+			path = XcodeFormatterTests;
 			sourceTree = "<group>";
 		};
 		8507ED111D8B26EB003A7DEA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				85E19CC61D8F015300F11938 /* CodeAnalyzer */,
+				85E19CC71D8F016500F11938 /* Regex */,
+				8507ED381D8E77AB003A7DEA /* LintFileComment.swift */,
 				85E19CC81D8F024E00F11938 /* LintLine.swift */,
 				8507ED0D1D8B2695003A7DEA /* LintSpace.swift */,
-				8507ED381D8E77AB003A7DEA /* LintFileComment.swift */,
-				85E19CC71D8F016500F11938 /* Regex */,
-				85E19CC61D8F015300F11938 /* CodeAnalyzer */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		8507ED171D8B274C003A7DEA /* Frameworks */ = {
@@ -220,15 +220,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8507ED1A1D8B274C003A7DEA /* SwiftyLinter */ = {
+		8507ED1A1D8B274C003A7DEA /* XcodeFormatterExtension */ = {
 			isa = PBXGroup;
 			children = (
-				8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */,
-				8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */,
-				8507ED211D8B274C003A7DEA /* Info.plist */,
 				8507ED1B1D8B274C003A7DEA /* Supporting Files */,
+				8507ED211D8B274C003A7DEA /* Info.plist */,
+				8507ED1F1D8B274C003A7DEA /* SourceEditorCommand.swift */,
+				8507ED1D1D8B274C003A7DEA /* SourceEditorExtension.swift */,
 			);
-			path = SwiftyLinter;
+			path = XcodeFormatterExtension;
 			sourceTree = "<group>";
 		};
 		8507ED1B1D8B274C003A7DEA /* Supporting Files */ = {
@@ -236,49 +236,49 @@
 			children = (
 				8507ED1C1D8B274C003A7DEA /* SwiftyLinter.entitlements */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		8507ED2B1D8B3C2D003A7DEA /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
 				8507ECF01D8B2631003A7DEA /* AppDelegate.swift */,
-				8507ECF21D8B2631003A7DEA /* ViewController.swift */,
 				8507ECF41D8B2631003A7DEA /* Assets.xcassets */,
-				8507ECF61D8B2631003A7DEA /* Main.storyboard */,
 				8507ECF91D8B2631003A7DEA /* Info.plist */,
+				8507ECF61D8B2631003A7DEA /* Main.storyboard */,
+				8507ECF21D8B2631003A7DEA /* ViewController.swift */,
 			);
-			name = "Supporting files";
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 		85E19CC61D8F015300F11938 /* CodeAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */,
 				85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */,
+				85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */,
 				85E19CD21D8F1D6200F11938 /* CodePosition.swift */,
 				85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */,
 			);
-			name = CodeAnalyzer;
+			path = CodeAnalyzer;
 			sourceTree = "<group>";
 		};
 		85E19CC71D8F016500F11938 /* Regex */ = {
 			isa = PBXGroup;
 			children = (
-				8507ED321D8D8906003A7DEA /* MatchCorrector.swift */,
-				858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */,
 				858BDDA71D9B010B005A6CB5 /* Extensions.swift */,
+				8507ED321D8D8906003A7DEA /* MatchCorrector.swift */,
 				858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */,
+				858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */,
 			);
-			name = Regex;
+			path = Regex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8507ECEC1D8B2631003A7DEA /* Swinter */ = {
+		8507ECEC1D8B2631003A7DEA /* XcodeFormatter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8507ED071D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "Swinter" */;
+			buildConfigurationList = 8507ED071D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "XcodeFormatter" */;
 			buildPhases = (
 				8507ECE91D8B2631003A7DEA /* Sources */,
 				8507ECEA1D8B2631003A7DEA /* Frameworks */,
@@ -290,14 +290,14 @@
 			dependencies = (
 				8507ED231D8B274C003A7DEA /* PBXTargetDependency */,
 			);
-			name = Swinter;
+			name = XcodeFormatter;
 			productName = Swinter;
-			productReference = 8507ECED1D8B2631003A7DEA /* Swinter.app */;
+			productReference = 8507ECED1D8B2631003A7DEA /* XcodeFormatter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8507ECFD1D8B2631003A7DEA /* SwinterTests */ = {
+		8507ECFD1D8B2631003A7DEA /* XcodeFormatterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8507ED0A1D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "SwinterTests" */;
+			buildConfigurationList = 8507ED0A1D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "XcodeFormatterTests" */;
 			buildPhases = (
 				8507ECFA1D8B2631003A7DEA /* Sources */,
 				8507ECFB1D8B2631003A7DEA /* Frameworks */,
@@ -308,14 +308,14 @@
 			dependencies = (
 				8507ED001D8B2631003A7DEA /* PBXTargetDependency */,
 			);
-			name = SwinterTests;
+			name = XcodeFormatterTests;
 			productName = SwinterTests;
-			productReference = 8507ECFE1D8B2631003A7DEA /* SwinterTests.xctest */;
+			productReference = 8507ECFE1D8B2631003A7DEA /* XcodeFormatterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8507ED151D8B274C003A7DEA /* SwiftyLinter */ = {
+		8507ED151D8B274C003A7DEA /* XFormatter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8507ED251D8B274C003A7DEA /* Build configuration list for PBXNativeTarget "SwiftyLinter" */;
+			buildConfigurationList = 8507ED251D8B274C003A7DEA /* Build configuration list for PBXNativeTarget "XFormatter" */;
 			buildPhases = (
 				8507ED121D8B274C003A7DEA /* Sources */,
 				8507ED131D8B274C003A7DEA /* Frameworks */,
@@ -325,9 +325,9 @@
 			);
 			dependencies = (
 			);
-			name = SwiftyLinter;
+			name = XFormatter;
 			productName = SwiftyLinter;
-			productReference = 8507ED161D8B274C003A7DEA /* SwiftyLinter.appex */;
+			productReference = 8507ED161D8B274C003A7DEA /* XFormatter.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
@@ -358,7 +358,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8507ECE81D8B2631003A7DEA /* Build configuration list for PBXProject "Swinter" */;
+			buildConfigurationList = 8507ECE81D8B2631003A7DEA /* Build configuration list for PBXProject "XcodeFormatter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -371,9 +371,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8507ECEC1D8B2631003A7DEA /* Swinter */,
-				8507ECFD1D8B2631003A7DEA /* SwinterTests */,
-				8507ED151D8B274C003A7DEA /* SwiftyLinter */,
+				8507ECEC1D8B2631003A7DEA /* XcodeFormatter */,
+				8507ECFD1D8B2631003A7DEA /* XcodeFormatterTests */,
+				8507ED151D8B274C003A7DEA /* XFormatter */,
 			);
 		};
 /* End PBXProject section */
@@ -477,12 +477,12 @@
 /* Begin PBXTargetDependency section */
 		8507ED001D8B2631003A7DEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8507ECEC1D8B2631003A7DEA /* Swinter */;
+			target = 8507ECEC1D8B2631003A7DEA /* XcodeFormatter */;
 			targetProxy = 8507ECFF1D8B2631003A7DEA /* PBXContainerItemProxy */;
 		};
 		8507ED231D8B274C003A7DEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8507ED151D8B274C003A7DEA /* SwiftyLinter */;
+			target = 8507ED151D8B274C003A7DEA /* XFormatter */;
 			targetProxy = 8507ED221D8B274C003A7DEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -494,6 +494,7 @@
 				8507ECF71D8B2631003A7DEA /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -597,10 +598,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 46ETJSLJJM;
-				INFOPLIST_FILE = Swinter/Info.plist;
+				INFOPLIST_FILE = "XcodeFormatter/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.XcodeFormatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -614,10 +615,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 46ETJSLJJM;
-				INFOPLIST_FILE = Swinter/Info.plist;
+				INFOPLIST_FILE = "XcodeFormatter/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.XcodeFormatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -630,12 +631,12 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 46ETJSLJJM;
-				INFOPLIST_FILE = SwinterTests/Info.plist;
+				INFOPLIST_FILE = XcodeFormatterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.SwinterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swinter.app/Contents/MacOS/Swinter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XcodeFormatter.app/Contents/MacOS/XcodeFormatter";
 			};
 			name = Debug;
 		};
@@ -646,26 +647,26 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 46ETJSLJJM;
-				INFOPLIST_FILE = SwinterTests/Info.plist;
+				INFOPLIST_FILE = XcodeFormatterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.SwinterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swinter.app/Contents/MacOS/Swinter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XcodeFormatter.app/Contents/MacOS/XcodeFormatter";
 			};
 			name = Release;
 		};
 		8507ED261D8B274C003A7DEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
+				CODE_SIGN_ENTITLEMENTS = XcodeFormatterExtension/XcodeFormatterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 46ETJSLJJM;
-				INFOPLIST_FILE = SwiftyLinter/Info.plist;
+				INFOPLIST_FILE = XcodeFormatterExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter.SwiftyLinter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.XcodeFormatter.Formatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -675,14 +676,14 @@
 		8507ED271D8B274C003A7DEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SwiftyLinter/SwiftyLinter.entitlements;
+				CODE_SIGN_ENTITLEMENTS = XcodeFormatterExtension/XcodeFormatterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 46ETJSLJJM;
-				INFOPLIST_FILE = SwiftyLinter/Info.plist;
+				INFOPLIST_FILE = XcodeFormatterExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.Swinter.SwiftyLinter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kandelvijaya.XcodeFormatter.Formatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -692,7 +693,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8507ECE81D8B2631003A7DEA /* Build configuration list for PBXProject "Swinter" */ = {
+		8507ECE81D8B2631003A7DEA /* Build configuration list for PBXProject "XcodeFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8507ED051D8B2631003A7DEA /* Debug */,
@@ -701,7 +702,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8507ED071D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "Swinter" */ = {
+		8507ED071D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "XcodeFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8507ED081D8B2631003A7DEA /* Debug */,
@@ -710,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8507ED0A1D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "SwinterTests" */ = {
+		8507ED0A1D8B2631003A7DEA /* Build configuration list for PBXNativeTarget "XcodeFormatterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8507ED0B1D8B2631003A7DEA /* Debug */,
@@ -719,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8507ED251D8B274C003A7DEA /* Build configuration list for PBXNativeTarget "SwiftyLinter" */ = {
+		8507ED251D8B274C003A7DEA /* Build configuration list for PBXNativeTarget "XFormatter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8507ED261D8B274C003A7DEA /* Debug */,

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Swinter
+@testable import XcodeFormatter
 
 class LintLineTests: XCTestCase {
     

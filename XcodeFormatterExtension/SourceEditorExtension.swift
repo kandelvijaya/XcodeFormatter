@@ -34,7 +34,7 @@ struct Command {
     static let moduleName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? ""
     
     //File Name
-    static let principleClass =  moduleName + ".SourceEditorCommand"
+    static let className =  moduleName + ".SourceEditorCommand"
     
     //Command Name and identifier
     static let swiftlyLintAll = (CommandName.swiftlyLintAll, CommandIdentifier.swiftlyLintAll)
@@ -49,7 +49,7 @@ struct Command {
     
     static func allCommands() -> [[XCSourceEditorCommandDefinitionKey: Any]] {
         return all().map {
-            [XCSourceEditorCommandDefinitionKey.classNameKey: principleClass,
+            [XCSourceEditorCommandDefinitionKey.classNameKey: className,
              XCSourceEditorCommandDefinitionKey.identifierKey: $0.1.rawValue,
              XCSourceEditorCommandDefinitionKey.nameKey: $0.0.rawValue
              ]
@@ -60,7 +60,9 @@ struct Command {
 
 class SourceEditorExtension: NSObject, XCSourceEditorExtension {
     
-    func extensionDidFinishLaunching() {}
+    func extensionDidFinishLaunching() {
+    
+    }
     
      var commandDefinitions: [[XCSourceEditorCommandDefinitionKey: Any]] {
         return Command.allCommands()
