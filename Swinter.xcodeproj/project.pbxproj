@@ -39,6 +39,7 @@
 		858BDDAE1D9B0657005A6CB5 /* MatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */; };
 		858BDDAF1D9B0671005A6CB5 /* MatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */; };
 		858BDDB01D9B0671005A6CB5 /* MatchPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */; };
+		8598D7611DA053E500AD8B65 /* TernaryOperatorSpacerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8598D7601DA053E500AD8B65 /* TernaryOperatorSpacerTests.swift */; };
 		85E19CC51D8EF6EA00F11938 /* CodeBlockAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */; };
 		85E19CC91D8F024E00F11938 /* LintLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC81D8F024E00F11938 /* LintLine.swift */; };
 		85E19CCA1D8F07B700F11938 /* LintLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E19CC81D8F024E00F11938 /* LintLine.swift */; };
@@ -116,6 +117,7 @@
 		858BDDA51D9B00C5005A6CB5 /* RegexpMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexpMatch.swift; sourceTree = "<group>"; };
 		858BDDA71D9B010B005A6CB5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		858BDDAD1D9B0657005A6CB5 /* MatchPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchPattern.swift; sourceTree = "<group>"; };
+		8598D7601DA053E500AD8B65 /* TernaryOperatorSpacerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TernaryOperatorSpacerTests.swift; sourceTree = "<group>"; };
 		85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlockAnalyzer.swift; sourceTree = "<group>"; };
 		85E19CC81D8F024E00F11938 /* LintLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LintLine.swift; sourceTree = "<group>"; };
 		85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeBlock.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 		8507ED011D8B2631003A7DEA /* SwinterTests */ = {
 			isa = PBXGroup;
 			children = (
+				8598D7601DA053E500AD8B65 /* TernaryOperatorSpacerTests.swift */,
 				28DCA3281D9696470005EE8C /* PrivatizerTests.swift */,
 				85E19CE01D91D79B00F11938 /* CodeBlockAnalyzerTests.swift */,
 				85E19CDC1D91CB5200F11938 /* EmptyLineInsertionTests.swift */,
@@ -251,7 +254,6 @@
 		85E19CC61D8F015300F11938 /* CodeAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
-				85E19CD61D90716200F11938 /* EmptyLineCorrection.swift */,
 				85E19CC41D8EF6EA00F11938 /* CodeBlockAnalyzer.swift */,
 				85E19CCE1D8F1D3400F11938 /* CodeBlock.swift */,
 				85E19CD21D8F1D6200F11938 /* CodePosition.swift */,
@@ -429,6 +431,7 @@
 			files = (
 				8507ED2A1D8B27E8003A7DEA /* LintSpace.swift in Sources */,
 				858BDDAB1D9B01A7005A6CB5 /* Extensions.swift in Sources */,
+				8598D7611DA053E500AD8B65 /* TernaryOperatorSpacerTests.swift in Sources */,
 				8507ED3B1D8E798B003A7DEA /* LintFileComment.swift in Sources */,
 				85E19CD81D90717C00F11938 /* EmptyLineCorrection.swift in Sources */,
 				28DCA3291D9696470005EE8C /* PrivatizerTests.swift in Sources */,

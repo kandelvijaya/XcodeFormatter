@@ -10,6 +10,12 @@ import XCTest
 
 class ColonSpacerTests: XCTestCase {
     
+    func testThat_SimpleColon_IsCorrected() {
+        let input = "a     : Int"
+        let expected = "a: Int"
+        assertThat(input: input, producesOutput: expected)
+    }
+    
     func testThat_ColonFollowedByNoSpace_isSpaceSeparated() {
         let input = "let a:String?"
         let expected = "let a: String?"

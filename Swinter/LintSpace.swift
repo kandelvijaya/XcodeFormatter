@@ -16,6 +16,7 @@ final class LintSpace {
         static let commaRegex = MatchPattern.comma.regex
         static let functionReturnArrowRegex = MatchPattern.functionReturnArrow.regex
         static let trailingCurlyBracketRegex = MatchPattern.trailingCurlyBracket.regex
+        static let ternaryOperatorRegex = MatchPattern.ternaryOperator.regex
     }
     
     func correctColonSpace(line: String) -> String {
@@ -43,6 +44,14 @@ final class LintSpace {
         guard let regex = Constants.trailingCurlyBracketRegex else { return line }
         guard line.contains("{") else { return line }
         let correctionInfo = MatchCorrectionInfo(regex:regex, forString: line, correctionRules: [2: " "] )
+        return MatchCorrector.correct(with: correctionInfo)
+    }
+    
+    /// For correct results, dont call colonCorrector after this method.
+    func correctTernaryOperator(line: String) -> String {
+        guard let regex = Constants.ternaryOperatorRegex else { return line }
+        guard line.contains(":") && line.contains("?") else { return line }
+        let correctionInfo = MatchCorrectionInfo(regex: regex, forString: line, correctionRules: [1: " ", 2: " ", 3: " ", 4: " "])
         return MatchCorrector.correct(with: correctionInfo)
     }
 

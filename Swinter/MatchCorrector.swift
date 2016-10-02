@@ -37,12 +37,11 @@ final class MatchCorrector {
         matches.forEach {
             for (index, cpRange) in $0.matches.enumerated() {
 
-                // Only indeces with rule are corrected.
+                // Only indeces with provided rule are corrected.
                 if let replaceMent = rules[index] {
-                    let currentRange = rangeFrom(range: cpRange.range, forString: correctedLine, offset: offset)
+                    let currentRange = rangeFrom(range: cpRange.range, forStrings: [line, correctedLine], offset: offset)
                     let currentOffset = -cpRange.content.characters.count + replaceMent.characters.count
                     offset += currentOffset
-                    
                     correctedLine.replaceSubrange(currentRange, with: replaceMent)
                 }
                 
@@ -51,9 +50,13 @@ final class MatchCorrector {
         return correctedLine
     }
     
-    private static func rangeFrom(range: Range<String.Index>, forString: String, offset: Int) -> Range<String.Index> {
-        let lowerIndex = forString.index(range.lowerBound, offsetBy: offset)
-        let upperIndex = forString.index(range.upperBound, offsetBy: offset)
+    private static func rangeFrom(range: Range<String.Index>, forStrings strings: [String], offset: Int) -> Range<String.Index> {
+        //fatal error: cannot decrement invalid index :: caused while removing a lot of spaces towards the end side
+        //fatal error: cannot increment beyond endIndex :: caused while adding spaces towards the end side
+        //To eradicate these problem we will always convert range from the largest of the provided string
+        let baseString = strings.sorted(by: {$0.characters.count > $01.characters.count}).first!
+        let lowerIndex = baseString.index(range.lowerBound, offsetBy: offset)
+        let upperIndex = baseString.index(range.upperBound, offsetBy: offset)
         return Range(uncheckedBounds: (lowerIndex, upperIndex))
     }
     
