@@ -53,6 +53,18 @@ class TernaryOperatorSpacerTests: XCTestCase {
         assertThat(input, produces: expected)
     }
     
+    func testThat_OptionalChaing_IsNotTreatedForTernaryOperation() {
+        let input = "let  b = thisOne?.map({$0.that()})flatmap{$0} : asd \n"
+        let expected = input
+        assertThat(input, produces: expected)
+    }
+    
+    func testThat_OptionalDictionaryLookup_AreNotTreatedForTernaryOperation() {
+        let input = "let b = dictionaryOptional?[\"some\"] : that \n"
+        let expected = input
+        assertThat(input, produces: expected)
+    }
+    
     private func assertThat(_ input: String, produces expected: String) {
         let output = LintSpace().correctTernaryOperator(line: input)
         XCTAssert(output == expected)

@@ -29,7 +29,7 @@ enum MatchPattern: String {
     /// Example:  true ?  1   :    0
     /// CP1 = ` ` CP2 = `  ` CP3 = `   ` CP4 = `    `
     ///
-    case ternaryOperator = "[^\\t]([\\s]*)(?:\\?)([\\s]*)(?:[^\\s:]+)([\\s]*)(?::)([\\s]*)[\\S]"
+    case ternaryOperator = "[^\\t]([\\s]*)(?:\\?)([\\s]*)(?:[^\\s:.\\[]+)([\\s]*)(?::)([\\s]*)[\\S]"
     
     
     //Other patterns
