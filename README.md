@@ -24,7 +24,7 @@ Xcode Swift Formatter according to Coding Guidelines specified by Swift and Zala
 3. In Dictionary
   * `[String:AnyObject]` -> `[String: AnyObject]` 
   * `["a"    : "apple"]` -> `["a": "apple"]`
-4. Beofe/After Comma
+4. Before/After Comma
   * `sum(a: Int,b:Int)` -> `sum(a: Int, b:Int)`
   * `sum(a: Int,    b:Int)` -> `sum(a: Int, b:Int)`
   * `sum(a: Int       ,b:Int)` -> `sum(a: Int, b:Int)`
