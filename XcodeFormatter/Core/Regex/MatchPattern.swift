@@ -29,17 +29,21 @@ enum MatchPattern: String {
     /// Example:  true ?  1   :    0
     /// CP1 = ` ` CP2 = `  ` CP3 = `   ` CP4 = `    `
     ///
-    case ternaryOperator = "[^\\t]([\\s]*)(?:\\?)([\\s]*)(?:[^\\s:.\\[]+)([\\s]*)(?::)([\\s]*)[\\S]"
+    /// This wont match
+    /// [someOpt?.map{ $0 } : "xyz"]
+    /// let dict = [(model as? AModelType) ?? AModelType : BModelType ]
+    ///
+    case ternaryOperator = "[^\\?](?<! as)([\\s]*)(?:\\?)([\\s]*)(?:[^\\s:.\\[]+)([\\s]*)(?::)([\\s]*)[\\S]"
     
     
-    //Other patterns
-    case stringQuote = "([^\\\\]\\\")|(^\\\")"        // Mathces all occurances of \" but not \\", \\\"
+    // Mathces all occurances of \" but not \\", \\\"
+    case stringQuote = "([^\\\\]\\\")|(^\\\")"
     case singleLineComment = "//"
+    
     case fileComment = "^(\\/\\/\\n)\\/\\/.*.swift\\n\\/\\/.*\\n\\/\\/\\n\\/\\/.*\\n(\\/\\/.*\\n\\/\\/\n)"
     
     
     var regex: NSRegularExpression? {
-        print("called \(#file)")
         return NSRegularExpression.regexFrom(pattern: self.rawValue)
     }
     
