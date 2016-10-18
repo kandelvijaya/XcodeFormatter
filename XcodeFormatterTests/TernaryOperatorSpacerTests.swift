@@ -65,6 +65,23 @@ class TernaryOperatorSpacerTests: XCTestCase {
         assertThat(input, produces: expected)
     }
     
+    func testThat_OptionalDownCast_InsideDictionary_IsNotTreatedForTernaryOperation() {
+        let input = "let dict = [apple as? ballType : DefaultBallType] \n"
+        let expected = input
+        assertThat(input, produces: expected)
+    }
+    
+    func testThat_TheseAre_NotTreatedForTernaryOperation() {
+        let inputs = ["[(model as? AModelType) ?? AModelType : BModelType ]"]
+        asserThat(inputs, matches: inputs)
+    }
+    
+    private func asserThat(_ inputs: [String], matches expected: [String]) {
+        for index in inputs.indices {
+            assertThat(inputs[index], produces: expected[index])
+        }
+    }
+    
     private func assertThat(_ input: String, produces expected: String) {
         let output = LintSpace().correctTernaryOperator(line: input)
         XCTAssert(output == expected)
